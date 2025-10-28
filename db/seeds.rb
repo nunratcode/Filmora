@@ -108,6 +108,49 @@ end
 
 puts "  total users: #{User.count}"
 
+#статьи
+puts "Creating article..."
+articles = []
+
+users.each do |user|
+  rand(1..5).times do
+    title_candidates = [
+      "С чего начать съемки на пленку",
+      "Капризная пленка: как избежать засветов",
+      "Уход за винилом от А до Я",
+      "Я сам: самостоятельная реставрация радиоллы",
+      "Где искать хороший винил в маленьком городе"
+    ]
+    title = title_candidates.sample
+    body = make_body(@words, 4) 
+    article = Article.create!(
+      user: user,
+      title: title,
+      body: body,
+      published_at: Time.now - rand(1..90).days
+    )
+
+    # привязка тегов к статье
+    sample_tags = fixed_tags.sample(rand(1..3)).map(&:id)
+    article.tag_ids = sample_tags
+
+    upload_path = Rails.root.join('public', 'autoupload', 'articles')
+    if defined?(ActiveStorage::Blob) && Dir.exist?(upload_path)
+      file = Dir.glob(File.join(upload_path, '*')).sample
+      if file && File.exist?(file)
+        if article.respond_to?(:image) || article.respond_to?(:images)
+          article.image.attach(io: File.open(file), filename: File.basename(file))
+          article.save!
+        end
+      end
+    end
+
+    articles << article
+    puts "  created article id=#{article.id} title='#{article.title}'"
+  end
+end
+puts "  total articles: #{Article.count}"
+
 
 # посты
 puts "Creating posts..."
@@ -131,7 +174,7 @@ users.each do |user|
       published_at: Time.now - rand(1..90).days
     )
 
-    # привязка тегов
+    # привязка тегов к посту
     sample_tags = fixed_tags.sample(rand(1..3)).map(&:id)
     post.tag_ids = sample_tags
 

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Widock_TRIAL';
+  src: url('/assets/fonts/Widock_TRIAL_Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Widock_TRIAL';
+  src: url('/assets/fonts/BuilderMono-Regular-400_0.otf') format('opentype');
+  font-weight: 400;
+  font-style: regular;
+}

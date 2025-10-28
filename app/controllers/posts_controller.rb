@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :popular]
   before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_like, :toggle_bookmark]
 
+  load_and_authorize_resource
+
   def index
     @posts = Post.includes(:user, :tags).order(created_at: :desc).page(params[:page])
   end

@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
+  load_and_authorize_resource
+
   def index
     @inbox = Message.where(recipient: current_user).order(created_at: :desc).page(params[:page])
   end

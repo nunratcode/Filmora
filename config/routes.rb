@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   # теги
   resources :tags, only: [:index, :show]
 
+  # статьи
+  resources :articles do
+    collection do
+      get :tagged  
+    end
+  end
+
   # посты
   resources :posts do
     collection do
