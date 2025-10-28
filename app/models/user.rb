@@ -23,7 +23,18 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :password, length: { minimum: 6 }, if: -> { new_record? || !password.nil? }
 
+
+  #роли
+  enum role: { user: 'user', creator: 'creator', admin: 'admin' }
+  after_initialize :set_default_role, if: :new_record?
+
   def full_name
     "#{profile&.first_name} #{profile&.last_name}"
+  end
+
+  private
+
+  def set_default_role
+    self.role ||= 'user'
   end
 end

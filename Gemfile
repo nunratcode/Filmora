@@ -67,3 +67,5 @@ gem 'faker'
 
 #аутентификация
 gem 'devise'
+
+gem 'cancancan', '~> 3.5'
