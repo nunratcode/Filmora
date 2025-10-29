@@ -1,6 +1,5 @@
 /*
- *= require _colors
+ *= require_self
  *= require fonts
  *= require_tree .
- *= require_self
  */
