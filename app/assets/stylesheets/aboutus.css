@@ -1,335 +1,471 @@
-.generated_1920ОНас_0_135 {
-    background: #101010;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.div {
+  	width: 100%;
+  	height: 5179px;
+  	position: relative;
+  	background-color: #101010;
+  	overflow: hidden;
+  	text-align: left;
+  	font-size: 32px;
+  	color: #fff;
+  	font-family: Builder Mono;
 }
-.Group_4_0_136 {
-    flex-shrink: 0;
-    width: 1925px;
-    height: 1969px;
+.orange-backgroundpng-1-icon {
+  	position: absolute;
+  	top: 4081px;
+  	left: 0px;
+  	width: 1918px;
+  	height: 854px;
+  	object-fit: cover;
+  	flex-shrink: 0;
 }
-.FilmoraМедиаСервисДляТехКтоЛюбитАналоговыеТехнологииЗдесьНетГонкиЗаИдеаломТолькоИскренностьКадраИТеплоНастоящегоСветаМыВеримЧтоАналоговаяТехникаНеПрошлоеАСпособВидетьМирОсознанноСВниманиемКДеталямИУважениемКРемеслу_0_138 {
-    color: #fff;
-    text-decoration-skip-ink: auto;
-    text-underline-offset: 8%;
-    text-underline-position: from-font;
-    flex-shrink: 0;
-    width: 1255px;
-    height: 348px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-thickness: auto;
-    display: inline-block;
+.rainbow-background-icon {
+  	position: absolute;
+  	top: 0px;
+  	left: 2px;
+  	width: 1920px;
+  	height: 1137px;
+  	object-fit: cover;
+  	flex-shrink: 0;
 }
-.generated_КтоМы_0_139 {
-    color: #fff;
-    flex-shrink: 0;
-    width: 1786px;
-    height: 88px;
-    font-family: Widock TRIAL;
-    font-size: 128px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: inline-block;
+.header {
+  	position: absolute;
+  	top: 48px;
+  	left: 50px;
+  	width: 1628px;
+  	height: 31px;
+  	flex-shrink: 0;
 }
-.Group_3_0_140 {
-    flex-shrink: 0;
-    width: 1920px;
-    height: 1294.67px;
+.buttton-aboutus {
+  	position: absolute;
+  	top: 0px;
+  	left: 386px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 97px;
+  	height: 31px;
 }
-.generated_ЧтоМыПредлагаем_0_143 {
-    color: #fff;
-    flex-shrink: 0;
-    width: 1340px;
-    height: 232px;
-    font-family: Widock TRIAL;
-    font-size: 128px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: inline-block;
+.button-lenta {
+  	position: absolute;
+  	top: 0px;
+  	left: 603px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 93px;
+  	height: 31px;
+  	opacity: 0.5;
 }
-.Header_0_144 {
-    flex-shrink: 0;
-    width: 1820.18px;
-    height: 41.98px;
+.button-stati {
+  	position: absolute;
+  	top: 0px;
+  	left: 816px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 312px;
+  	height: 31px;
+  	opacity: 0.5;
 }
-.Gx8G8TycLUf1000_1000Ql80_1_0_161 {
-    aspect-ratio: 923.92/923.92;
-    mix-blend-mode: screen;
-    background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
-    flex-shrink: 0;
-    width: 923.924px;
-    height: 923.924px;
-    transform: rotate(5.382deg);
+.button-profile-icon {
+  	position: absolute;
+  	height: 93.55%;
+  	width: 1.79%;
+  	top: 6.45%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 98.21%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
 }
-.Pilots_1_0_162 {
-    aspect-ratio: 874.49/874.49;
-    mix-blend-mode: screen;
-    background: #d3d3d3 url(<path-to-image>) 50% / cover no-repeat;
-    flex-shrink: 0;
-    width: 874.488px;
-    height: 874.488px;
-    transform: rotate(-13.449deg);
+.header-logo-icon {
+  	position: absolute;
+  	top: 2px;
+  	left: 0px;
+  	width: 216.4px;
+  	height: 28px;
 }
-.Filmora_0_163 {
-    flex-shrink: 0;
-    width: 1820px;
-    height: 235.473px;
+.button-favorites-icon {
+  	position: absolute;
+  	height: 83.87%;
+  	width: 1.72%;
+  	top: 9.68%;
+  	right: 2.33%;
+  	bottom: 6.45%;
+  	left: 95.95%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
 }
-.Rectangle_13_0_171 {
-    background: #fff;
-    flex-shrink: 0;
-    width: 1920px;
-    height: 244px;
+.filmora-icon {
+  	position: absolute;
+  	top: 335px;
+  	left: 50px;
+  	width: 1628px;
+  	height: 210.6px;
+  	flex-shrink: 0;
 }
-.Filmora_0_172 {
-    flex-shrink: 0;
-    width: 1820px;
-    height: 235.473px;
+.filmora-icon2 {
+  	position: absolute;
+  	top: 552.15px;
+  	left: 50px;
+  	width: 1628px;
+  	height: 210.6px;
+  	flex-shrink: 0;
 }
-.generated_МедиаСервисДляЛюбителейАналоговыхТехнологийИСтаройЦифры_0_180 {
-    color: #fff;
-    flex-shrink: 0;
-    width: 1010px;
-    height: 89px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.pilots-icon {
+  	position: absolute;
+  	top: 213px;
+  	left: -55px;
+  	width: 965px;
+  	height: 965px;
+  	object-fit: contain;
+  	mix-blend-mode: screen;
+  	flex-shrink: 0;
 }
-.Filmora_0_181 {
-    color: #fff;
-    flex-shrink: 0;
-    width: 1362px;
-    height: 150px;
-    font-family: Widock TRIAL;
-    font-size: 92px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    display: inline-block;
+.panasonik-icon {
+  	position: absolute;
+  	top: 104px;
+  	left: 829px;
+  	width: 906.8px;
+  	height: 906.8px;
+  	object-fit: contain;
+  	mix-blend-mode: screen;
+  	flex-shrink: 0;
 }
-.generated_ПростоПодпишисьНаРассылкуИПервымУзнаешьОЗапуске_0_182 {
-    color: #fff;
-    flex-shrink: 0;
-    width: 1228px;
-    height: 99px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.div2 {
+  	position: absolute;
+  	top: 975px;
+  	left: 50px;
+  	font-size: 48px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 1010px;
+  	height: 89px;
+  	flex-shrink: 0;
 }
-.generated_СоздательницаАлександраАрефьева_0_183 {
-    color: #101010;
-    flex-shrink: 0;
-    width: 355px;
-    height: 74px;
-    font-family: Builder Mono;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%;
-    display: inline-block;
+.filmora-container {
+  	position: absolute;
+  	top: 1349px;
+  	left: 50px;
+  	font-size: 44px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 1255px;
+  	height: 274px;
+  	flex-shrink: 0;
 }
-.generated_КураторыФедорНоздринЗахарДень_0_184 {
-    color: #101010;
-    flex-shrink: 0;
-    width: 259px;
-    height: 107px;
-    font-family: Builder Mono;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%;
-    display: inline-block;
+.span {
+  	text-decoration: underline;
 }
-.Rectangle_11_0_185 {
-    flex-shrink: 0;
-    width: 39px;
-    height: 39px;
+.b {
+  	position: absolute;
+  	top: 1201px;
+  	left: 50px;
+  	font-size: 122px;
+  	display: inline-block;
+  	font-family: Widock TRIAL;
+  	width: 1786px;
+  	height: 88px;
+  	flex-shrink: 0;
 }
-.Rectangle_11_0_358 {
-    box-sizing: border-box;
-    border: 2px solid #1010104d;
-    border-radius: 6px;
-    flex-shrink: 0;
-    width: 39px;
-    height: 39px;
+.b2 {
+  	position: absolute;
+  	top: 2972px;
+  	left: 50px;
+  	font-size: 122px;
+  	display: inline-block;
+  	font-family: Widock TRIAL;
+  	width: 1340px;
+  	height: 202px;
+  	flex-shrink: 0;
 }
-.Filmora_0_186 {
-    flex-shrink: 0;
-    width: 479.043px;
-    height: 61.979px;
+.card {
+  	position: absolute;
+  	top: 3229px;
+  	left: 50px;
+  	width: 1629px;
+  	height: 771px;
+  	flex-shrink: 0;
+  	font-size: 98px;
+  	color: #101010;
+  	font-family: Widock TRIAL;
 }
-.generated_ЧтоМыПредлагаем_0_194 {
-    flex-shrink: 0;
-    width: 1829px;
-    height: 771px;
+.card-child {
+  	position: absolute;
+  	height: 76.78%;
+  	width: 87.91%;
+  	top: 14.79%;
+  	right: 12.09%;
+  	bottom: 8.43%;
+  	left: 0%;
+  	border-radius: 50px;
+  	background-color: #fff;
 }
-.Rectangle_1_0_378 {
-    background: #fff;
-    border-radius: 50px;
-    flex-shrink: 0;
-    width: 1432px;
-    height: 624px;
+.button-03-icon {
+  	position: absolute;
+  	height: 12.19%;
+  	width: 10.01%;
+  	top: 0%;
+  	right: 67.53%;
+  	bottom: 87.81%;
+  	left: 22.47%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
 }
-.generated_03_0_379 {
-    fill: #ffffff4d;
-    flex-shrink: 0;
-    width: 163px;
-    height: 94px;
+.button-02-icon {
+  	position: absolute;
+  	height: 12.19%;
+  	width: 10.01%;
+  	top: 0%;
+  	right: 78.76%;
+  	bottom: 87.81%;
+  	left: 11.23%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
 }
-.Rectangle_4_0_380 {
-    background: #000;
-    border-radius: 50px;
-    width: 163px;
-    height: 94px;
+.button-01-icon {
+  	position: absolute;
+  	height: 27.63%;
+  	width: 10.01%;
+  	top: 0%;
+  	right: 89.99%;
+  	bottom: 72.37%;
+  	left: 0%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
 }
-.generated_03_0_381 {
-    color: #fff;
-    text-align: center;
-    width: 163px;
-    height: 48px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.button-04-icon {
+  	position: absolute;
+  	height: 12.19%;
+  	width: 10.01%;
+  	top: 0%;
+  	right: 56.29%;
+  	bottom: 87.81%;
+  	left: 33.7%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	max-height: 100%;
 }
-.generated_02_0_382 {
-    fill: #ffffff4d;
-    flex-shrink: 0;
-    width: 163px;
-    height: 94px;
+.polaroid-icon {
+  	position: absolute;
+  	width: 31%;
+  	top: 179px;
+  	right: 0%;
+  	left: 69%;
+  	max-width: 100%;
+  	overflow: hidden;
+  	height: 592px;
+  	object-fit: cover;
 }
-.Rectangle_3_0_383 {
-    background: #000;
-    border-radius: 50px;
-    width: 163px;
-    height: 94px;
+.b3 {
+  	position: absolute;
+  	height: 13.1%;
+  	width: 65.93%;
+  	top: 23.22%;
+  	left: 3.07%;
+  	line-height: 100%;
+  	display: inline-block;
 }
-.generated_02_0_384 {
-    color: #fff;
-    text-align: center;
-    width: 163px;
-    height: 48px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.filmora {
+  	position: absolute;
+  	height: 45.14%;
+  	width: 63.17%;
+  	top: 40.86%;
+  	left: 3.07%;
+  	font-size: 44px;
+  	line-height: 100%;
+  	font-family: Builder Mono;
+  	display: inline-block;
 }
-.generated_01_0_385 {
-    fill: #fff;
-    flex-shrink: 0;
-    width: 163px;
-    height: 213px;
+.filmora2 {
+  	position: absolute;
+  	top: 4126px;
+  	left: 50px;
+  	font-size: 92px;
+  	display: inline-block;
+  	font-family: Widock TRIAL;
+  	width: 1362px;
+  	height: 150px;
+  	flex-shrink: 0;
 }
-.Rectangle_2_0_386 {
-    background: #000;
-    border-radius: 50px;
-    width: 163px;
-    height: 213px;
+.div3 {
+  	position: absolute;
+  	top: 4321px;
+  	left: 50px;
+  	font-size: 48px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 1228px;
+  	height: 99px;
+  	flex-shrink: 0;
 }
-.generated_01_0_387 {
-    color: #fff;
-    text-align: center;
-    width: 163px;
-    height: 48px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.inner {
+  	position: absolute;
+  	top: 4672px;
+  	left: 98px;
+  	width: 39px;
+  	height: 39px;
+  	flex-shrink: 0;
 }
-.generated_04_0_388 {
-    fill: #ffffff4d;
-    flex-shrink: 0;
-    width: 163px;
-    height: 94px;
+.instance-child {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	border-radius: 6px;
+  	border: 2px solid rgba(16, 16, 16, 0.3);
+  	box-sizing: border-box;
 }
-.Rectangle_5_0_389 {
-    background: #000;
-    border-radius: 50px;
-    width: 163px;
-    height: 94px;
+.footer {
+  	position: absolute;
+  	top: 4935px;
+  	left: 0px;
+  	width: 1728px;
+  	height: 244px;
+  	flex-shrink: 0;
+  	color: rgba(16, 16, 16, 0.35);
 }
-.generated_04_0_390 {
-    color: #fff;
-    text-align: center;
-    width: 163px;
-    height: 48px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.footer-background {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #fff;
+  	width: 1728px;
+  	height: 244px;
 }
-.Polaroid_636CloseUpRylDph38Ju_1_1_0_391 {
-    aspect-ratio: 98/115;
-    background: #d3d3d3 url(<path-to-image>) -167.93px -32.618px/159.676% 110.303%
-        no-repeat;
-    flex-shrink: 0;
-    width: 588px;
-    height: 690px;
+.div4 {
+  	position: absolute;
+  	top: 68px;
+  	left: 952px;
+  	line-height: 110%;
+  	display: inline-block;
+  	width: 367px;
+  	height: 107px;
 }
-.generated_Сообщество_0_392 {
-    color: #101010;
-    flex-shrink: 0;
-    width: 1074px;
-    height: 101px;
-    font-family: Widock TRIAL;
-    font-size: 102px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    display: inline-block;
+.span3 {
+  	color: #101010;
 }
-.FilmoraДляВасСтаньтеЧастьюНашегоСообществаПишитеИЧитайтеПостыКоммуницируйтеСДругимиПользователямиИОбменивайтесьОпытомМыУвереныЧтоFilmoraСтанетОтличнымПомощникомВПоисках_0_393 {
-    color: #101010;
-    flex-shrink: 0;
-    width: 1128px;
-    height: 348px;
-    font-family: Builder Mono;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    display: inline-block;
+.div5 {
+  	position: absolute;
+  	top: 68px;
+  	left: 1419px;
+  	line-height: 110%;
+  	display: inline-block;
+  	width: 259px;
+  	height: 107px;
+  	color: rgba(16, 16, 16, 0.3);
 }
-.Group_8_0_195 {
-    flex-shrink: 0;
-    width: 1920px;
-    height: 1137px;
+.footer-logo-icon {
+  	position: absolute;
+  	top: 91px;
+  	left: 50px;
+  	width: 479px;
+  	height: 62px;
 }
-.Group_7_0_198 {
-    flex-shrink: 0;
-    width: 1918px;
-    height: 854px;
+.mailer {
+  	position: absolute;
+  	top: 4465px;
+  	left: 50px;
+  	width: 701px;
+  	height: 425px;
+  	flex-shrink: 0;
+  	color: #101010;
 }
-.Group_5_0_201 {
-    flex-shrink: 0;
-    width: 701px;
-    height: 425px;
+.mailer-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	border-radius: 50px;
+  	background-color: #fff;
+  	width: 701px;
+  	height: 425px;
 }
-.Rectangle_14_15_82 {
-    flex-shrink: 0;
-    width: 39px;
-    height: 39px;
+.e-mail {
+  	position: absolute;
+  	top: 45px;
+  	left: 48px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 606px;
+  	height: 36px;
 }
+.filmora3 {
+  	position: absolute;
+  	top: 210px;
+  	left: 111px;
+  	line-height: 100%;
+  	display: inline-block;
+  	width: 543px;
+  	height: 71px;
+}
+.email {
+  	position: absolute;
+  	top: 106px;
+  	left: 48px;
+  	width: 606px;
+  	height: 69px;
+  	color: rgba(16, 16, 16, 0.3);
+}
+.email-child {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	border-radius: 20px;
+  	border: 2px solid rgba(16, 16, 16, 0.3);
+  	box-sizing: border-box;
+}
+.e-mail2 {
+  	position: absolute;
+  	height: 52.17%;
+  	width: 93.4%;
+  	top: 24.64%;
+  	left: 3.3%;
+  	line-height: 100%;
+  	display: inline-block;
+}
+.button-send {
+  	position: absolute;
+  	top: 311px;
+  	left: 48px;
+  	width: 606px;
+  	height: 69px;
+  	text-align: center;
+  	color: #fff;
+}
+.button-send-child {
+  	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	top: 0%;
+  	right: 0%;
+  	bottom: 0%;
+  	left: 0%;
+  	border-radius: 20px;
+  	background-color: rgba(30, 30, 30, 0.3);
+}
+.checkbox {
+  	position: absolute;
+  	top: 207px;
+  	left: 48px;
+  	width: 39px;
+  	height: 39px;
+}
+.boy-1-icon {
+  	position: absolute;
+  	top: 1707px;
+  	left: -1px;
+  	width: 1723px;
+  	height: 1162px;
+  	object-fit: cover;
+  	flex-shrink: 0;
+}
+

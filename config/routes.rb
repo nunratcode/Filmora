@@ -77,5 +77,5 @@ Rails.application.routes.draw do
   get "willbesoon", to: "home#willbesoon"
 
   # делаем заглушку главной страницей
-  root "home#willbesoon"
+  root "home#aboutus"
 end
