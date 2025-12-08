@@ -1,110 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<%= stylesheet_link_tag "fonts", "aboutus", "data-turbo-track": "reload" %>
-  	
-</head>
-<body>
-  	
-  	<div class="div">
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "aboutus", media: "all" %>
 
-			<img src="<%= asset_path('rainbow_background.png') %>">
+<!-- ХЭДЕР -->
+<header>
+  <%= image_tag "header_logo.svg", class: "logo" %>
 
-			<img src="<%= asset_path('boy.png') %>">
 
-    		<img src="<%= asset_path('orange_background.png') %>">
-    		
-    		
-    		<div class="header">
-				<img src="<%= asset_path('header_logo.svg') %>">
-      			<div class="buttton-aboutus">О нас</div>
-      			<div class="button-lenta">Лента</div>
-      			<div class="button-stati">Статьи от Filmora</div>
-      			<img src="<%= asset_path('button_profile.svg') %>">
-      			<img src="<%= asset_path('button_favorites.svg') %>">
-      			
-    		</div>
-    		<img class="filmora-icon" alt="">
-    		
-    		<img class="filmora-icon2" alt="">
-    		
-    		<img src="<%= asset_path('21pilots.png') %>">
-    		
-    		<img src="<%= asset_path('panasonik.png') %>">
-    		
-    		<div class="div2">Медиа-сервис для любителей аналоговых технологий </div>
-    		<div class="filmora-container">Мы – Filmora, медиа-сервис для тех, кто любит аналоговые технологии. Здесь нет гонки за идеалом — только
-      			<span class="span">искренность</span> кадра и тепло настоящего света. Мы верим, что аналоговая техника —
-      			<span class="span">не прошлое, а способ видеть мир осознанно</span>, с вниманием к деталям и уважением к ремеслу.
-    		</div>
-    		<b class="b">кто мы?</b>
-    		<b class="b2">Что мы предлагаем?</b>
-    		<div class="card">
-      			<div class="card-child">
-      			</div>
-      			<img src="<%= asset_path('button_03.svg') %>">
-      			
-      			<img src="<%= asset_path('button_02.svg') %>">
-      			
-      			<img src="<%= asset_path('button_01.svg') %>">
-      			
-      			<img src="<%= asset_path('button_04.svg') %>">
-      			
-      			<img src="<%= asset_path('polaroid.png') %>">
-      			
-      			<b class="b3">СООБЩЕСТВО</b>
-      			<div class="filmora">Давно мечтали найти себе друзей по интересу? Тогда Filmora для вас. Станьте частью нашего сообщества: пишите и читайте посты, коммуницируйте с другими пользователями и обменивайтесь опытом. Мы уверены, что Filmora станет отличным помощником в поисках.</div>
-    		</div>
-    		<b class="filmora2">как не пропустить запуск Filmora?</b>
-    		<div class="div3">Просто подпишись на рассылку и первым узнаешь о запуске</div>
-    		<div class="inner">
-      			<div class="instance-child">
-      			</div>
-    		</div>
-    		<div class="footer">
-				<img src="<%= asset_path('footer_logo.svg') %>">
-      			<div class="footer-background">
-      			</div>
-      			<div class="div4">
-        				<span>создательницы: <br></span>
-        				<span class="span3">Александра Арефьева<br>Евгения Старовойтова</span>
-      			</div>
-      			<div class="div5">
-        				<span>кураторы: <br></span>
-        				<span class="span3">Федор Ноздрин<br>Захар День</span>
-      			</div>
-      		
-      			
-    		</div>
-    		<div class="mailer">
-      			<div class="mailer-child">
-      			</div>
-      			<div class="e-mail">E-mail</div>
-      			<div class="filmora3">Я согласен на получение рассылки от Filmora</div>
-      			<div class="email">
-        				<div class="email-child">
-        				</div>
-        				<div class="e-mail2">Введите ваш e-mail</div>
-      			</div>
-      			<div class="button-send">
-        				<div class="button-send-child">
-        				</div>
-        				<div class="e-mail2">Отправить</div>
-      			</div>
-      			<div class="checkbox">
-        				<div class="instance-child">
-        				</div>
-      			</div>
-    		</div>
-    	
-    		
-  	</div>
-  	
-  	
-  	
-  	
-</body>
-</html>
+  <nav class="navbar">
+    <a href="#">О нас</a>
+    <a href="#">Лента</a>
+    <a href="#">Статьи от Filmora</a>
+  </nav>
+
+  <%= image_tag "favorites_ikon.svg", class: "fav_ikon"%>
+  <%= image_tag "profile_ikon.svg", class: "profile_ikon" %>
+  
+</header>
+
+<!-- ЗАГЛАВНЫЙ БЛОК -->
+<div class="main_block">
+  <%= image_tag "rainbow_background.png", class: "background" %>
+  <%= image_tag "filmora_main.svg", class: "filmora_main" %>
+  <div class="text_main">
+    Медиа-сервис для любителей аналоговых технологий
+  </div>
+<div>
+
+<!-- КТО МЫ? -->
+<div class="who_block">
+  <%= image_tag "boy.png", class: "boy_background" %>
+  <div class="who_big_text">
+    КТО МЫ?
+  </div>
+  <div class="who_text">
+    Мы – Filmora, медиа-сервис для тех, кто любит аналоговые технологии. Здесь нет гонки за&nbsp;идеалом — только <span class="underline">искренность</span> кадра и&nbsp;тепло настоящего света. Мы верим, что аналоговая техника — <span class="underline">не&nbsp;прошлое, а&nbsp;способ видеть мир осознанно<span>, с&nbsp;вниманием к&nbsp;деталям и&nbsp;уважением к&nbsp;ремеслу.
+  </div>
+</div>
+
+<!-- ЧТО МЫ ПРЕДЛАГАЕМ? -->
+<div class="what_block">
+  <%= image_tag "backblack.png", class: "backblack" %>
+
+  <div class="what_big_text">
+    ЧТО МЫ ПРЕДЛАГАЕМ?
+  </div>
+
+  <div class="card">
+    <%= image_tag "card_test.svg", class: "card_test" %>
+    <%= image_tag "polaroid.png", class: "polaroid" %>
+
+    <div class="card_big_text">
+      СООБЩЕСТВО
+    </div>
+
+    <div class="card_text">
+      Давно мечтали найти себе друзей по интересу? Тогда Filmora для&nbsp;вас. 
+      Станьте частью нашего сообщества: пишите и&nbsp;читайте посты, 
+      коммуницируйте с другими пользователями и&nbsp;обменивайтесь опытом. 
+      Мы уверены, что Filmora станет отличным помощником в&nbsp;поисках.
+    </div>
+  </div>
+</div>
+
+<!-- МЕЙЛЕР -->
+<div class="mailer_block">
+  <%= image_tag "orange_background.png", class: "orange_background" %>
+  <%= image_tag "mailer_test.svg", class: "mailer_test" %>
+  <div class="mailer_text">
+    Просто подпишись на&nbsp;рассылку и&nbsp;первым<br>узнаешь о&nbsp;новых фишках Filmora
+  </div>
+  <div class="mailer_big_text">
+    КАК  НЕ ПРОПУСТИТЬ НОВОСТИ FILMORA?
+  </div>
+</div>
+
+<!-- ФУТЕР -->
+<footer>
+  <%= image_tag "footer_logo.svg", class: "footer_logo" %>
+  <%= image_tag "white_back.svg", class: "white_back" %>
+  <div class="creators">
+    <span class="grey_text">создательницы:</span><br>
+    <span class="black_text">Александра Арефьева</span><br>
+    <span class="black_text">Старовойтова Евгения</span>
+  </div>
+  <div class="curators">
+    <span class="grey_text">кураторы:</span><br>
+    <span class="black_text">Федор Ноздрин</span><br>
+    <span class="black_text">Захар День</span>
+  </div>
+</footer>

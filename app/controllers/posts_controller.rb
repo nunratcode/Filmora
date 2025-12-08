@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search, :popular]
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :toggle_like, :toggle_bookmark]
+  before_action :authenticate_user!, except: [ :index, :show, :search, :popular ]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy, :toggle_like, :toggle_favorite ]
 
   load_and_authorize_resource
 
@@ -9,13 +9,12 @@ class PostsController < ApplicationController
   end
 
   def feed
-
     @posts = Post.joins(:user).where(user_id: current_user.following_ids).order(created_at: :desc).page(params[:page])
     render :index
   end
 
   def popular
-    @posts = Post.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC').limit(20)
+    @posts = Post.left_joins(:likes).group(:id).order("COUNT(likes.id) DESC").limit(20)
     render :index
   end
 
@@ -75,14 +74,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def toggle_bookmark
+  def toggle_favorite
     fav = current_user.favorites.find_by(post: @post)
     if fav
       fav.destroy
-      render json: { bookmarked: false }
+      render json: { favoriteed: false }
     else
       current_user.favorites.create!(post: @post)
-      render json: { bookmarked: true }
+      render json: { favoriteed: true }
     end
   end
 

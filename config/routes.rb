@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     # тонглы для лайков и закладок
     member do
       post :toggle_like
-      post :toggle_bookmark
+      post :toggle_favorite
     end
   end
 
