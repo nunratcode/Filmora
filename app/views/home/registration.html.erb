@@ -1,0 +1,74 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "signin", media: "all" %>
+
+<body>
+    <!-- ХЕДЕР -->
+    <header class="header">
+    <div class="header_logo">
+        FILMORA
+    </div>
+
+    <nav class="nav">
+        <a href="/about">О нас</a>
+        <a href="/feed">Статьи</a>
+        <a href="/subscription">Подписка</a>
+    </nav>
+
+    <div class="icons">
+        <% if user_signed_in? %>
+        <a href="/letterbox">
+            <%= image_tag "letterbox.svg", class: "icon" %>
+        </a>
+        <% end %>
+        <a href="/favorites">
+        <%= image_tag "favorites.svg", class: "icon" %>
+        </a>
+        <a href="/signin">
+        <%= image_tag "user.svg", class: "icon" %>
+        </a>
+    </div>
+    </header>
+
+    <!-- ОСНОВНОЕ -->
+    <main class="login_page">
+        <div class="big">РЕГИСТРАЦИЯ</div>
+
+        <div class="card-wrapper">
+            <div class="card">
+                <label for="card_text">E-mail</label>
+                <input type="email" placeholder="Введите ваш e-mail" class="box">
+
+                <label for="card_text">Пароль</label>
+                <input type="password" placeholder="Придумайте пароль" class="box">
+
+                <button class="button">Зарегистрироваться</button>
+            </div>
+
+            <div class="links">
+                <a href="/signin">Уже есть аккаунт?</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        
+        <div class="footer_info">
+        <div>
+            <span class="label">
+            <span class="grey_text">создательницы:</span><br>
+            <span class="black_text">Александра Арефьева</span><br>
+            <span class="black_text">Старовойтова Евгения</span>
+        </div>
+
+        <div>
+            <span class="label">
+            <span class="grey_text">кураторы:</span><br>
+            <span class="black_text">Федор Ноздрин</span><br>
+            <span class="black_text">Захар День</span>
+        </div>
+        </div>
+    </footer>
+
+</body>

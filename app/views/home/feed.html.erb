@@ -1,0 +1,213 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "feed", media: "all" %>
+<%= javascript_include_tag "tabs", defer: true %>
+
+<body>
+
+    <!-- ХЕДЕР -->
+    <header class="header">
+    <div class="header_logo">
+        FILMORA
+    </div>
+
+    <nav class="nav">
+        <a href="/about">О нас</a>
+        <a href="/feed">Статьи</a>
+        <a href="/subscription">Подписка</a>
+    </nav>
+
+    <div class="icons">
+        <% if user_signed_in? %>
+        <a href="/letterbox">
+            <%= image_tag "letterbox.svg", class: "icon" %>
+        </a>
+        <% end %>
+        <a href="/favorites">
+        <%= image_tag "favorites.svg", class: "icon" %>
+        </a>
+        <a href="/signin">
+        <%= image_tag "user.svg", class: "icon" %>
+        </a>
+    </div>
+    </header>
+
+    <!-- РАЗДЕЛЫ -->
+
+    <section class="rasdeli">
+        <div class="big">
+            РАЗДЕЛЫ
+        </div>
+
+        <div class="sections_tabs">
+            <button class="sections_tab active" data-tab="community">Сообщество</button>
+            <button class="sections_tab" data-tab="subscription">Подписка</button>
+            <button class="sections_tab" data-tab="events">События</button>
+        </div>
+
+        <div class="sections_cards">
+            <!-- Сообщество -->
+            <article class="section_card active" data-content="community">
+                <h3 class="section_card_title">
+                    КАКИЕ ОШИБКИ<br>ПРОЩАЕТ ПЛЕНКА
+                </h3>
+                <a href="#" class="section_card_link">Обсудить →</a>
+            </article>
+
+            <article class="section_card active" data-content="community">
+                <h3 class="section_card_title">
+                    АРХИВЫ,<br>КОТОРЫЕ НИКТО НЕ ПРОСИЛ СОЗДАВАТЬ
+                </h3>
+                <a href="#" class="section_card_link">Обсудить →</a>
+            </article>
+
+            <article class="section_card active" data-content="community">
+                <h3 class="section_card_title">
+                    ЗАЧЕМ МЫ ПРОДОЛЖАЕМ ЧИНИТЬ?
+                </h3>
+                <a href="#" class="section_card_link">Обсудить →</a>
+            </article>
+
+            <!-- Подписка -->
+            <article class="section_card" data-content="subscription">
+                <h3 class="section_card_title">CD ИЛИ ВИНИЛ?<br>КАК ВЫБРАТЬ ПОДПИСКУ</h3>
+                <div class="data">Наша подписка может включать в себя как CD так и&nbsp;винил, но как понять, что подходит вам?</div>
+                <a href="#" class="section_card_link">Подробнее →</a>
+            </article>
+
+            <article class="section_card" data-content="subscription">
+                <h3 class="section_card_title">ПОДДЕРЖКА РАБОТЫ РЕДАКЦИИ FILMORA</h3>
+                <div class="data">Подписка помогает проекту развиваться как независимому формату</div>
+                <a href="#" class="section_card_link">Подробнее →</a>
+            </article>
+
+            <!-- События -->
+            <article class="section_card" data-content="events">
+                <h3 class="section_card_title">ЧИНИМ СТАРЫЕ<br>CD-ПЛЕЕРЫ<br>И ОЖИВЛЯЕМ КАССЕТНЫЕ ДЕКИ</h3>
+                <div class="data">Через 2 дня</div>
+                <a href="#" class="section_card_link">Участвовать →</a>
+            </article>
+
+            <article class="section_card" data-content="events">
+                <h3 class="section_card_title">Разбираем ВАШИ старые кассеты<br>и&nbsp;личные архивы (АНОНИМНО)</h3>
+                <div class="data">Через 5 дней</div>
+                <a href="#" class="section_card_link">Участвовать →</a>
+            </article>
+
+            <article class="section_card" data-content="events">
+                <h3 class="section_card_title">Разбираем домашние видеоархивы на&nbsp;MiniDV и VHS</h3>
+                <div class="data">Через неделю</div>
+                <a href="#" class="section_card_link">Участвовать →</a>
+            </article>
+    </section>
+
+    <!--  СТАТЬИ -->
+
+
+    <section class="articles">
+    <div class="big">
+        СТАТЬИ
+    </div>
+
+    <div class="articles_tags">
+        <span class="articles_tag">Аналоговая техника</span>
+        <span class="articles_tag">Ранняя цифра</span>
+        <span class="articles_tag">Плёнка</span>
+        <span class="articles_tag">Физические носители</span>
+        <span class="articles_tag">Визуальный шум</span>
+        <span class="articles_tag">Ремонт</span>
+        <span class="articles_tag">Архивность</span>
+        <span class="articles_tag">Медленные процессы</span>
+    </div>
+
+    <div class="articles_list">
+
+        <article class="article_card_long">
+        <div class="article_image"></div>
+
+        <div class="article_content">
+            <h3 class="article_title">
+            ЗАЧЕМ МЫ ГОВОРИМ ПРО&nbsp;АНАЛОГОВУЮ<br>
+            ТЕХНИКУ СЕГОДНЯ
+            </h3>
+
+            <p class="article_text">
+            Интерес к&nbsp;старой технике сегодня растёт, но&nbsp;разговор о&nbsp;ней часто поверхностный.
+            Обычно обсуждают эстетику или противопоставляют её современной цифре, почти не&nbsp;затрагивая
+            сам процесс и&nbsp;повседневный опыт использования.
+            </p>
+
+            <a href="#" class="article_link">
+            Читать полностью →
+            </a>
+        </div>
+        </article>
+
+        <article class="article_card_shorts">
+        <div class="article_gallery">
+            <div class="gallery_item"></div>
+            <div class="gallery_item"></div>
+            <div class="gallery_item"></div>
+        </div>
+
+        <div class="article_content">
+            <h3 class="article_title">
+            ПОЛГОДА С CANON POWERSHOT A95
+            </h3>
+
+            <p class="article_text">
+            Пишу этот текст скорее как заметку для тех, кто думает брать старую компактную цифру, чем как полноценный обзор.
+            Canon PowerShot A95 у&nbsp;меня появился случайно, нашёлся в&nbsp;коробке с&nbsp;техникой родственников
+            и&nbsp;оказался в&nbsp;рабочем состоянии.
+            </p>
+
+            <a href="#" class="article_link">
+            Читать полностью →
+            </a>
+        </div>
+        </article>
+
+        <article class="article_card_long">
+        <div class="article_image"></div>
+
+        <div class="article_content">
+            <h3 class="article_title">
+                ПЕРЕХОД НА АНАЛОГ:<br>Я УСТАЛ ОТ ТИКТОКА
+            </h3>
+
+            <p class="article_text">
+                В&nbsp;последнее время все чаще замечаю за&nbsp;собой упадок интереса к&nbsp;коротким видео в&nbsp;интернете. При этом пересмотреть «Властелина колец» 
+                не&nbsp;хватает терпения. Будь оно проклято это клиповое мышление! Я перехожу на аналог!
+            </p>
+
+            <a href="#" class="article_link">
+            Читать полностью →
+            </a>
+        </div>
+        </article>
+
+    </div>
+    </section>
+
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer_logo">
+            FILMORA
+        </div>
+        
+        <div class="footer_info">
+        <div>
+            <span class="label">
+            <span class="grey_text">создательницы:</span><br>
+            <span class="black_text">Александра Арефьева</span><br>
+            <span class="black_text">Старовойтова Евгения</span>
+        </div>
+
+        <div>
+            <span class="label">
+            <span class="grey_text">кураторы:</span><br>
+            <span class="black_text">Федор Ноздрин</span><br>
+            <span class="black_text">Захар День</span>
+        </div>
+    </footer>

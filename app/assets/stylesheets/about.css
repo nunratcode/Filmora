@@ -1,0 +1,393 @@
+:root {
+    --black: #101010;
+    --black_30: #10101030;
+    --black_35: #10101035;
+    --grey: #282828;
+    --white: #FFFFFF;
+    --white_35: #FFFFFF35;
+    --white_50: #ffffff50;
+    --font-builder-mono: 'Builder Mono', monospace;
+    --font-widock-trial: 'Widock TRIAL', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+    min-height: 100vh;
+    display: block; 
+    flex-direction: column;
+}
+
+/* ХЕДЕР */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;  
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    z-index: 2;
+}
+
+.header_logo {
+  font-size: 2.3rem;
+  font-family: var(--font-widock-trial);
+  flex-shrink: 0;
+  color: var(--white);
+}
+
+.nav {
+    display: flex;
+    gap: 5rem;
+    margin: 0 auto;
+}
+
+.nav a {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white_50);
+    transition: 0.5s;
+}
+
+.nav a:hover {
+    color: var(--white);
+}
+
+.icons {
+    display: flex;
+    gap: 1.8rem;
+    flex-shrink: 0;
+}
+
+/* ЗАГЛАВНАЯ */
+
+#main_block {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.background {
+  width: 100%;       
+  height: auto;     
+  display: block;   
+}
+
+.filmora_main {
+	position: absolute;
+	top: 16rem;
+	left: 2rem;
+	width: 95%;
+	right: 2rem;
+	background-color: transparent;
+}
+
+.main_text {
+	position: absolute;
+	margin-top: -10rem;
+	margin-left: 2rem;
+	font-size: 2.5rem;
+	line-height: 100%;
+	font-family: var(--font-builder-mono);
+	color: var(--white);
+	text-align: left;
+	z-index: 3;
+}
+
+/* КТО МЫ? */
+
+.about {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.big {
+    font-size: 8rem;
+    font-family: var(--font-widock-trial);
+    color: var(--white);
+    text-align: left; 
+    margin: 0;
+    padding: 2rem;
+}
+
+.small {
+    font-size: 2.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white);
+    margin: 0; 
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.boy {
+    background-color: transparent;
+    width: 100%;  
+    height: auto;  
+    display: block;
+    padding: 0;
+}
+
+/* ЧТО МЫ ПРЕДЛАГАЕМ? */
+.what {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    padding-top: 4rem;
+}
+
+.big_what {
+    font-size: 8rem;
+    font-family: var(--font-widock-trial);
+    color: var(--white);
+    text-align: left; 
+    margin: 0;
+}
+
+.sections_tabs {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+}
+
+.section_tab {
+    font-size: 2rem;
+    font-family: var(--font-builder-mono);
+    padding: 1rem 3rem;
+    border-radius: 1.5rem;
+    background-color: var(--white_35);
+    border: none;
+    cursor: pointer;
+}
+
+.section_tab.active {
+    background: var(--white);
+    color: var(--black);
+}
+
+.sections_cards {
+    width: 90%;
+    max-width: 100%;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 2re;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.section_card {
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--black);
+}
+
+.section_card.active {
+    display: flex;
+}
+
+.section_card_title {
+    margin: 0;
+    font-size: 6rem;
+    font-family: var(--font-widock-trial);
+}
+
+.section_card_text {
+    font-size: 2.5rem;
+    font-family: var(--font-builder-mono);
+}
+
+.polaroid {
+    position: absolute;
+    top: 20rem;        
+    right: 2rem;
+    z-index: 2;
+    max-width: 30%;
+    height: auto;
+}
+
+/* РАССЫЛКА */
+
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5rem;
+}
+
+.background_news {
+    width: 100%;       
+    height: 83%;     
+    display: block; 
+    position: absolute;
+}
+
+.news_box{
+    padding: 2rem;
+    z-index: 3;
+}
+
+.big_news {
+    font-size: 5.75rem;
+    font-family: var(--font-widock-trial);
+    color: var(--white);
+    text-align: left; 
+    margin: 0;
+    padding-bottom: 2.5rem;
+    z-index: 3;
+}
+
+.small_news {
+    font-size: 2.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white); 
+    padding-bottom: 3rem;
+    z-index: 3;
+}
+
+.wrapper {
+    width: clamp(24rem, 80%, 40rem); 
+    margin: 0 auto;                  
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap: 1rem;           
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;            
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+}
+
+label input {
+    margin-top: 1.25rem;
+}
+
+.box {
+    border: 0.15rem solid var(--black_30);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black_30);
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 1rem 3.5rem; 
+    background-color: var(--black_35);
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white);
+    border: none;          
+    cursor: pointer;       
+    display: inline-block;
+    text-align: center;   
+    margin: 2.5rem auto 0 auto; 
+    transition: 0.5s;
+}
+
+.button:hover{
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.yesno {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.yesno_text {
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+}
+
+.custom-checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* ФУТЕР */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+.footer_logo {
+  font-size: 2.5rem;
+  font-family: var(--font-widock-trial);
+  color: var(--black);
+  padding-top: 1rem;
+}
+
+.footer_info {
+  display: flex;
+  gap: 4rem;
+  font-size: 1rem;
+  font-family: var(--font-builder-mono);
+}
+
+.grey_text {
+  color: var(--black_35);
+}
+
+.black_text {
+  color: var(--black);
+}
+
+
+@media (max-width: 768px) {
+      .footer {
+    display: flex;
+    align-items: center;         
+    justify-content: right;
+    padding: 0rem 1rem;          
+    background-color: var(--white);
+    box-sizing: border-box;
+  } 
+
+  .footer_info {
+    display: flex;
+    white-space: nowrap;
+    gap: 3rem;
+    font-size: 0.5rem;
+    font-family: var(--font-builder-mono);
+    box-sizing: border-box;
+  }
+
+  .footer_logo{
+    font-size: 0rem;
+  }
+}

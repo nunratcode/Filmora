@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [ :index, :show, :search, :popular ]
-  before_action :set_post, only: [ :show, :edit, :update, :destroy, :toggle_like, :toggle_favorite ]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy, :toggle_like, :toggle_bookmark ]
 
   load_and_authorize_resource
 
@@ -74,14 +74,14 @@ class PostsController < ApplicationController
     end
   end
 
-  def toggle_favorite
+  def toggle_bookmark
     fav = current_user.favorites.find_by(post: @post)
     if fav
       fav.destroy
-      render json: { favoriteed: false }
+      render json: { bookmarked: false }
     else
       current_user.favorites.create!(post: @post)
-      render json: { favoriteed: true }
+      render json: { bookmarked: true }
     end
   end
 

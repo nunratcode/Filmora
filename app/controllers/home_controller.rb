@@ -2,6 +2,6 @@ class HomeController < ApplicationController
   def willbesoon
   end
 
-  def aboutus
+  def about
   end
 end

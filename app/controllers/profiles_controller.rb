@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [ :show, :edit, :update, :content, :favorites ]
-  before_action :authenticate_user!, only: [ :edit, :update ]
+  before_action :set_profile, only: [:show, :edit, :update, :content, :bookmarks]
+  before_action :authenticate_user!, only: [:edit, :update]
 
   def index
     @profiles = Profile.all.page(params[:page])
@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
     @posts = @profile.user.posts.page(params[:page])
   end
 
-  def favorites
+  def bookmarks
     @favorites = @profile.user.favorites.page(params[:page])
   end
 

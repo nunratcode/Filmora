@@ -1,0 +1,144 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "about", media: "all" %>
+<%= javascript_include_tag "tabs_numbers", defer: true %>
+
+<body>
+    <!-- ХЕДЕР -->
+    <header class="header">
+        <div class="header_logo">FILMORA</div>
+
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Статьи</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
+
+        <div class="icons">
+            <% if user_signed_in? %>
+            <a href="/letterbox">
+                <%= image_tag "letterbox.svg", class: "icon" %>
+            </a>
+            <% end %>
+            <a href="/favorites">
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+            <a href="/signin">
+            <%= image_tag "user.svg", class: "icon" %>
+            </a>
+        </div>
+    </header>
+
+    <!-- ЗАГЛАВНАЯ -->
+    <section class="main_block">
+        <%= image_tag "rainbow_background.png", class: "background" %>
+        <%= image_tag "filmora_main.svg", class: "filmora_main" %>
+        <div class="main_text">Медиа-сервис для любителей<br>аналоговых технологий</div>
+    </section>
+
+    <!-- О НАС -->
+    <section class="about">
+        <div class="big">КТО&nbsp;МЫ?</div>
+        <div class="small"> 
+            Мы – Filmora, медиа-сервис для тех, кто любит аналоговые технологии. 
+            Здесь нет гонки за&nbsp;идеалом — только <span class="underline">искренность</span> кадра 
+            и&nbsp;тепло настоящего света. Мы верим, что аналоговая техника — <span class="underline">не&nbsp;прошлое, 
+            а&nbsp;способ видеть мир осознанно</span>, с&nbsp;вниманием к&nbsp;деталям и&nbsp;уважением к&nbsp;ремеслу.
+        </div>
+        <%= image_tag "boy.png", class: "boy" %>
+    </section>
+
+    <!-- ЧТО МЫ ПРЕДЛАГАЕМ? -->
+    <section class="what">
+        <div class="big_what">ЧТО МЫ ПРЕДЛАГАЕМ?</div>
+
+        <%= image_tag "polaroid.png", class: "polaroid" %>
+
+        <div class="sections_tabs">
+            <button class="section_tab active" data-tab="community">01</button>
+            <button class="section_tab" data-tab="information">02</button>
+            <button class="section_tab" data-tab="subscription">03</button>
+            <button class="section_tab" data-tab="events">04</button>
+        </div>
+
+        <div class="sections_cards">
+            <article class="section_card active" data-content="community">
+                <h3 class="section_card_title">СООБЩЕСТВО</h3>
+                <div class="section_card_text">
+                    Давно мечтали найти себе друзей по&nbsp;интересу?<br>Тогда Filmora для вас.
+                    Станьте частью нашего<br>сообщества: пишите и&nbsp;читайте посты,
+                    <br>коммуницируйте с&nbsp;другими пользователями<br>и&nbsp;обменивайтесь опытом.
+                </div>
+            </article>
+
+            <article class="section_card" data-content="information">
+                <h3 class="section_card_title">ЗНАНИЯ</h3>
+                <div class="section_card_text">
+                    На нашем сервисе вы можете найти статьи<br>от&nbsp;экспертов Filmora и&nbsp;других 
+                    пользователях<br>о&nbsp;пленочной фото и&nbsp;видео съемке, ремонте<br>и&nbsp;реставрации
+                    техники и&nbsp;опыте<br>пользования аналоговой техникой.
+                </div>
+            </article>
+
+            <article class="section_card" data-content="subscription">
+                <h3 class="section_card_title">ПОДПИСКА</h3>
+                <div class="section_card_text">
+                    Подписка на винил и&nbsp;CD с&nbsp;ежемесячной<br>подборкой айтемов
+                    от&nbsp;Filmora. Таким образом<br>вы не только получаете новый опыт и пополняете<br>коллекци,
+                    но и поддерживаете редакцию.
+                </div>
+            </article>
+
+            <article class="section_card" data-content="events">
+                <h3 class="section_card_title">МЕРОПРИЯТИЯ</h3>
+                <div class="section_card_text">
+                    Вы можете посетить наши оффлайн и&nbsp;онлайн<br>мероприятия. Мы регулярно
+                    проводим свопы,<br>мастер-классы по ремонту, а также маркеты.<br>Вы можете узнать о них из рассылки.
+                </div>
+            </article>
+        
+        </div>
+    </section>
+
+    <!-- РАССЫЛКА -->
+    <section class="news">
+        <%= image_tag "orange_background.png", class: "background_news" %>
+        <div class="news_box">
+            <div class="big_news">КАК НЕ ПРОПУСТИТЬ<br>НОВОСТИ FILMORA?</div>
+            <div class="small_news">Просто подпишись на рассылку и первым<br>узнаешь о новых фишках Filmora.</div>
+            <div class="wrapper">
+                <label for="card_text">E-mail</label>
+                <input type="email" placeholder="Введите ваш e-mail" class="box">
+                
+                <div class="yesno">
+                    <input type="checkbox" class="custom-checkbox">
+                    <div class="yesno_text">Я согласен на получение<br>рассылки от Filmora</div>
+                </div>
+
+                <button class="button">Подписаться на рассылку</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer_logo">
+            FILMORA
+        </div>
+        
+        <div class="footer_info">
+        <div>
+            <span class="label">
+            <span class="grey_text">создательницы:</span><br>
+            <span class="black_text">Александра Арефьева</span><br>
+            <span class="black_text">Старовойтова Евгения</span>
+        </div>
+
+        <div>
+            <span class="label">
+            <span class="grey_text">кураторы:</span><br>
+            <span class="black_text">Федор Ноздрин</span><br>
+            <span class="black_text">Захар День</span>
+        </div>
+    </footer>
+</body>

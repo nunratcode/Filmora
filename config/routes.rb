@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     # тонглы для лайков и закладок
     member do
       post :toggle_like
-      post :toggle_favorite
+      post :toggle_bookmark
     end
   end
 
@@ -73,9 +73,16 @@ Rails.application.routes.draw do
     resources :application_forms, only: [ :index, :show, :destroy ]
   end
 
-  get "aboutus", to: "home#aboutus"
+  get "about", to: "home#about"
   get "willbesoon", to: "home#willbesoon"
+  get "signin", to: "home#signin"
+  get "registration", to: "home#registration"
+  get "feed", to: "home#feed"
 
-  # делаем заглушку главной страницей
-  root "home#aboutus"
+  match "/403", to: "errors#403", via: :all
+  match "/404", to: "errors#404", via: :all
+  match "/500", to: "errors#500", via: :all
+  match "*path", to: "errors#404", via: :all
+
+  root "home#about"
 end

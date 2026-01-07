@@ -1,0 +1,52 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "errors", media: "all" %>
+
+
+<body>
+
+    <!-- 404 -->
+    <div class="errors_box">
+        <div class="error_pic">
+            <%= image_tag "404.svg", class: "pic" %>
+        </div>
+
+        <div class="errors_card">
+            <div class="errors_big">
+                МЫ ИСКАЛИ,<br>НО НЕ НАШЛИ
+            </div>
+
+            <div class="errors_small">
+                Так бывает с&nbsp;архивами, старыми<br>ссылками и&nbsp;забытыми маршрутами
+            </div>
+
+            <a href="/about" class="errors_button">
+                Вернуться на главную
+            </a>
+
+        </div>
+    </div
+    >
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer_logo">
+            FILMORA
+        </div>
+        
+        <div class="footer_info">
+        <div>
+            <span class="label">
+            <span class="grey_text">создательницы:</span><br>
+            <span class="black_text">Александра Арефьева</span><br>
+            <span class="black_text">Старовойтова Евгения</span>
+        </div>
+
+        <div>
+            <span class="label">
+            <span class="grey_text">кураторы:</span><br>
+            <span class="black_text">Федор Ноздрин</span><br>
+            <span class="black_text">Захар День</span>
+        </div>
+        </div>
+    </footer>
+</body>

@@ -1,0 +1,19 @@
+# Query: config.consider_all_requests_local 
+# ContextLines: 1
+
+3 results - 3 files
+
+config/environments/development.rb:
+  12    # Show full error reports.
+  13:   config.consider_all_requests_local = true
+  14  
+
+config/environments/production.rb:
+  12    # Full error reports are disabled.
+  13:   config.consider_all_requests_local = false
+  14  
+
+config/environments/test.rb:
+  21    # Show full error reports.
+  22:   config.consider_all_requests_local = true
+  23    config.cache_store = :null_store
