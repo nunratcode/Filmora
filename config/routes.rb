@@ -79,10 +79,10 @@ Rails.application.routes.draw do
   get "registration", to: "home#registration"
   get "feed", to: "home#feed"
 
-  match "/403", to: "errors#403", via: :all
-  match "/404", to: "errors#404", via: :all
-  match "/500", to: "errors#500", via: :all
-  match "*path", to: "errors#404", via: :all
+  match "/403", to: "errors#forbidden", via: :all
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_error", via: :all
+  match "*path", to: "errors#not_found", via: :all
 
   root "home#about"
 end
