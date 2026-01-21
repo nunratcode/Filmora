@@ -14,9 +14,16 @@
 /* ХЕДЕР */
 
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;  
+    background: transparent;
     display: flex;
     align-items: center;
     padding: 1.5rem 2rem;
+    z-index: 2;
 }
 
 .header_logo {

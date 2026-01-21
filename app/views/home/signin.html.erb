@@ -1,33 +1,32 @@
 <%= stylesheet_link_tag "fonts", media: "all" %>
 <%= stylesheet_link_tag "colors", media: "all" %>
 <%= stylesheet_link_tag "signin", media: "all" %>
+<%= javascript_include_tag "email_password_input", defer: true %>
 
 <body>
     <!-- ХЕДЕР -->
     <header class="header">
-    <div class="header_logo">
-        FILMORA
-    </div>
+        <div class="header_logo">FILMORA</div>
 
-    <nav class="nav">
-        <a href="/about">О нас</a>
-        <a href="/feed">Статьи</a>
-        <a href="/subscription">Подписка</a>
-    </nav>
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Статьи</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
 
-    <div class="icons">
-        <% if user_signed_in? %>
-        <a href="/letterbox">
-            <%= image_tag "letterbox.svg", class: "icon" %>
-        </a>
-        <% end %>
-        <a href="/favorites">
-        <%= image_tag "favorites.svg", class: "icon" %>
-        </a>
-        <a href="/signin">
-        <%= image_tag "user.svg", class: "icon" %>
-        </a>
-    </div>
+        <div class="icons">
+            <% if user_signed_in? %>
+            <a href="/letterbox">
+                <%= image_tag "letterbox.svg", class: "icon" %>
+            </a>
+            <% end %>
+            <a href="/favorites">
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+            <a href="/signin">
+            <%= image_tag "user.svg", class: "icon" %>
+            </a>
+        </div> 
     </header>
 
     <!-- ОСНОВНОЕ -->
@@ -51,28 +50,6 @@
             </div>
         </div>
     </main>
-
-    <script>
-        const emailInput = document.querySelector('.email_box');
-        emailInput.addEventListener('input', () => {
-            if (emailInput.value.trim() !== '') {
-            emailInput.classList.add('filled');
-            } else {
-            emailInput.classList.remove('filled');
-            }
-        });
-
-        const passwordInput = document.querySelector('.password_box');
-        passwordInput.addEventListener('input', () => {
-            if (passwordInput.value.trim() !== '') {
-            passwordInput.classList.add('filled');
-            } else {
-            passwordInput.classList.remove('filled');
-            }
-        });
-    </script>
-
-    
 
     <!-- ФУТЕР -->
     <footer class="footer">
