@@ -103,22 +103,69 @@
     <!-- РАССЫЛКА -->
     <section class="news">
         <%= image_tag "orange_background.png", class: "background_news" %>
+
         <div class="news_box">
-            <div class="big_news">КАК НЕ ПРОПУСТИТЬ<br>НОВОСТИ FILMORA?</div>
-            <div class="small_news">Просто подпишись на рассылку и первым<br>узнаешь о новых фишках Filmora.</div>
+            <div class="big_news">
+                КАК НЕ ПРОПУСТИТЬ<br>НОВОСТИ FILMORA?
+            </div>
+
+            <div class="small_news">
+                Просто подпишись на рассылку и первым<br>
+                узнаешь о новых фишках Filmora.
+            </div>
+
             <div class="wrapper">
-                <label for="card_text">E-mail</label>
-                <input type="email" placeholder="Введите ваш e-mail" class="box">
-                
+                <label for="email">E-mail</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Введите ваш e-mail"
+                    class="box"
+                >
+
                 <div class="yesno">
-                    <input type="checkbox" class="custom-checkbox">
-                    <div class="yesno_text">Я согласен на получение<br>рассылки от Filmora</div>
+                    <input
+                        type="checkbox"
+                        class="custom-checkbox"
+                        id="agree"
+                    >
+                    <label for="agree" class="yesno_text">
+                        Я согласен на получение<br>
+                        рассылки от Filmora
+                    </label>
                 </div>
 
-                <button class="button">Подписаться на рассылку</button>
+                <button class="button" disabled>
+                    Подписаться на рассылку
+                </button>
             </div>
         </div>
     </section>
+
+    <script>
+        const emailInput = document.querySelector('.box');
+        const checkbox = document.querySelector('#agree');
+        const button = document.querySelector('.button');
+
+        // смена цвета текста email
+        emailInput.addEventListener('input', () => {
+            emailInput.classList.toggle('filled', emailInput.value.trim() !== '');
+        });
+
+        // включение / выключение кнопки по чекбоксу
+        checkbox.addEventListener('change', () => {
+            button.disabled = !checkbox.checked;
+        });
+
+        // клик по кнопке
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            button.textContent = 'Вы подписаны на рассылку';
+            button.disabled = true;
+            button.classList.add('subscribed');
+        });
+    </script>
 
     <!-- ФУТЕР -->
     <footer class="footer">

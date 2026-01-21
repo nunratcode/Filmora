@@ -15,7 +15,7 @@ body {
     padding: 0;
     background-color: var(--black);
     min-height: 100vh;
-    display: block; 
+    display: block;
     flex-direction: column;
 }
 
@@ -295,6 +295,10 @@ label input {
     font-family: var(--font-builder-mono);
     color: var(--black_30);
     box-sizing: border-box;
+}
+
+.box.filled {
+    color: var(--black);
 }
 
 .button {

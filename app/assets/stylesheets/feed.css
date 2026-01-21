@@ -186,9 +186,13 @@ body {
   gap: 3rem;
 }
 
+.sections_cards {
+  width: 100%;
+}
 
 .article_card {
   width: 100%;
+
 }
 
 .article_card_long {
