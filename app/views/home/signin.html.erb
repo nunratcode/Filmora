@@ -37,20 +37,42 @@
         <div class="card-wrapper">
             <div class="card">
                 <label for="card_text">E-mail</label>
-                <input type="email" placeholder="Введите ваш e-mail" class="box">
+                <input type="email" placeholder="Введите ваш e-mail" class="email_box">
 
                 <label for="card_text">Пароль</label>
-                <input type="password" placeholder="Введите ваш пароль" class="box">
+                <input type="password" placeholder="Введите ваш пароль" class="password_box">
 
                 <button class="button">Войти</button>
             </div>
 
             <div class="links">
-                <a href="#">Забыли пароль?</a>
+                <a href="/forbid_password">Забыли пароль?</a>
                 <a href="/registration">Зарегистрироваться</a>
             </div>
         </div>
     </main>
+
+    <script>
+        const emailInput = document.querySelector('.email_box');
+        emailInput.addEventListener('input', () => {
+            if (emailInput.value.trim() !== '') {
+            emailInput.classList.add('filled');
+            } else {
+            emailInput.classList.remove('filled');
+            }
+        });
+
+        const passwordInput = document.querySelector('.password_box');
+        passwordInput.addEventListener('input', () => {
+            if (passwordInput.value.trim() !== '') {
+            passwordInput.classList.add('filled');
+            } else {
+            passwordInput.classList.remove('filled');
+            }
+        });
+    </script>
+
+    
 
     <!-- ФУТЕР -->
     <footer class="footer">
