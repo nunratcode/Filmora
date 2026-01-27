@@ -1,0 +1,209 @@
+:root {
+    --black: #101010;
+    --black_30: #10101030;
+    --black_35: #10101035;
+    --grey: #282828;
+    --white: #FFFFFF;
+    --white_35: #FFFFFF35;
+    --white_50: #ffffff50;
+    --font-builder-mono: 'Builder Mono', monospace;
+    --font-widock-trial: 'Widock TRIAL', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+    min-height: 100vh;
+    display: block;
+    flex-direction: column;
+    justify-content: left;
+}
+
+/* ХЕДЕР */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.header_logo {
+  font-size: 2.3rem;
+  font-family: var(--font-widock-trial);
+  flex-shrink: 0;
+  color: var(--white);
+}
+
+.nav {
+    display: flex;
+    gap: 5rem;
+    margin: 0 auto;
+}
+
+.nav a {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white_50);
+    transition: 0.5s;
+}
+
+.nav a:hover {
+    color: var(--white);
+}
+
+.icons {
+    display: flex;
+    gap: 1.8rem;
+    flex-shrink: 0;
+}
+
+/* НАСТРОЙКИ */
+
+.grainshift {
+    margin-top: 9rem;
+    margin-bottom: 6rem;
+    width: 35rem;
+    height: auto;
+    color: var(--white);
+    margin-left: 1.5rem;
+}
+
+/* ОБСУЖДЕНИЯ */
+
+.big {
+    font-size: 2.5rem;
+    font-family: var(--font-widock-trial);
+    color: var(--white);
+    margin-left: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 0;
+}
+
+.discussion{
+    margin-bottom: 3rem;
+}
+
+.discussion_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-family: var(--font-widock-trial);
+    color: var(--white);
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.new_comments {
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white);
+    margin-left: 4rem;
+}
+
+.text {
+    width: 50%;
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white);
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.discussion_link {
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white);
+    margin-left: 1.5rem;
+    text-decoration: underline;
+}
+
+/* МОИ СТАТЬИ */
+
+.article_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.new_article {
+    background-color: var(--white_35);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+    outline: var(--white_35);
+    margin-right: 1.5rem;
+    padding: 1rem 2rem;
+    transition: 0.3s;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.new_article:hover {
+    background-color: var(--white);
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    margin-right: 2.5rem;
+}
+
+.count {
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white);
+}
+
+/* ФУТЕР */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+.footer_logo {
+  font-size: 2.5rem;
+  font-family: var(--font-widock-trial);
+  color: var(--black);
+  padding-top: 1rem;
+}
+
+.footer_info {
+  display: flex;
+  gap: 4rem;
+  font-size: 1rem;
+  font-family: var(--font-builder-mono);
+}
+
+.grey_text {
+  color: var(--black_35);
+}
+
+.black_text {
+  color: var(--black);
+}
+

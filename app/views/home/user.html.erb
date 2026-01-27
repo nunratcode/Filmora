@@ -1,0 +1,117 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "user", media: "all" %>
+
+<body>
+    
+    <!-- ХЕДЕР -->
+    <header class="header">
+        <div class="header_logo">FILMORA</div>
+
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Статьи</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
+
+        <div class="icons">
+            <% if user_signed_in? %>
+            <a href="/letterbox">
+                <%= image_tag "letterbox.svg", class: "icon" %>
+            </a>
+            <% end %>
+            <a href="/favorites">
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+            <a href="/signin">
+            <%= image_tag "user.svg", class: "icon" %>
+            </a>
+        </div> 
+    </header>
+
+    <!-- НАСТРОЙКИ -->
+    <a href="#">
+        <%= image_tag "grainshift.svg", class: "grainshift" %>
+    </a>
+
+    <!-- ОБСУЖДЕНИЯ -->   
+    <div class="big">ОБСУЖДЕНИЯ</div>
+
+    <div class="discussion">
+        <div class="discussion_wrapper">
+            <div class="title">ЗАЧЕМ МЫ ПРОДОЛЖАЕМ ЧИНИТЬ?</div>
+            <div class="new_comments">5 новых комментариев</div>
+        </div>
+        <div class="text">
+            Мне кажется, тут дело не столько в экономике или экологии, сколько в ощущении контроля. Когда чинишь вещь, ты понимаешь, из чего ...
+        </div>
+        <a href="#", class="discussion_link">Продолжить обсуждение →</a>
+    </div>
+    
+    <div class="discussion">
+        <div class="discussion_wrapper">
+            <div class="title">ПЕРЕХОД НА АНАЛОГ: Я УСТАЛ ОТ ТИКТОКА?</div>
+            <div class="new_comments">12 новых комментариев</div>
+        </div>
+        <div class="text">
+            Вы че, «Властелин колец» вообще не длинный. А вообще тик ток разжижает мозг, доказанный факт.
+        </div>
+        <a href="#", class="discussion_link">Продолжить обсуждение →</a>
+    </div>
+
+    <!-- МОИ СТАТЬИ -->
+    <div class="article_wrapper">
+        <div class="big">МОИ СТАТЬИ</div>
+        <button class="new_article">
+            Опубликовать статью
+        </button>
+    </div>
+
+    <div class="article">
+        <div class="title">ПОЛГОДА С CANON POWERSHOT A95</div>
+
+        <div class="text">
+            Пишу этот текст скорее как заметку для тех, кто думает брать старую компактную цифру, чем как полноценный обзор.
+            Canon PowerShot A95 у&nbsp;меня появился случайно, нашёлся в&nbsp;коробке с&nbsp;техникой родственников
+            и&nbsp;оказался в&nbsp;рабочем состоянии.
+        </div>
+
+        <div class="results">
+            <div class="result">
+                <%= image_tag "likes_icon.svg", class: "icon" %>
+                <div class="count">0</div>
+            </div>
+            <div class="result">
+                <%= image_tag "comments_icon.svg", class: "icon" %>
+                <div class="count">0</div>
+            </div>
+            <div class="result">
+                <%= image_tag "favs_icon.svg", class: "icon" %>
+                <div class="count">0</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer_logo">
+            FILMORA
+        </div>
+        
+        <div class="footer_info">
+        <div>
+            <span class="label">
+            <span class="grey_text">создательницы:</span><br>
+            <span class="black_text">Александра Арефьева</span><br>
+            <span class="black_text">Старовойтова Евгения</span>
+        </div>
+
+        <div>
+            <span class="label">
+            <span class="grey_text">кураторы:</span><br>
+            <span class="black_text">Федор Ноздрин</span><br>
+            <span class="black_text">Захар День</span>
+        </div>
+    </footer>
+
+</body>

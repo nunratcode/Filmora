@@ -78,6 +78,8 @@ Rails.application.routes.draw do
   get "signin", to: "home#signin"
   get "registration", to: "home#registration"
   get "feed", to: "home#feed"
+  get "user", to: "home#user"
+
 
   match "/403", to: "errors#forbidden", via: :all
   match "/404", to: "errors#not_found", via: :all
