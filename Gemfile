@@ -69,3 +69,5 @@ gem 'faker'
 gem 'devise'
 
 gem 'cancancan', '~> 3.5'
+
+gem 'bcrypt', '~> 3.1.7'

@@ -10,8 +10,8 @@
 
         <nav class="nav">
             <a href="/about">О нас</a>
-            <a href="/feed">Статьи</a>
-            <a href="/subscription">Подписка</a>
+            <a href="/feed">Лента</a>
+            <a href="/subscription">Статьи Filmora</a>
         </nav>
 
         <div class="icons">
@@ -34,15 +34,15 @@
         <div class="big">ВХОД</div>
 
         <div class="card-wrapper">
-            <div class="card">
-                <label for="card_text">E-mail</label>
-                <input type="email" placeholder="Введите ваш e-mail" class="email_box">
+            <%= form_with url: signin_path, method: :post, html: { class: "card" } do |f| %>
+                <label for="email_box">E-mail</label>
+                <%= f.email_field :email, placeholder: "Введите ваш e-mail", class: "email_box", id: "email_box" %>
 
-                <label for="card_text">Пароль</label>
-                <input type="password" placeholder="Введите ваш пароль" class="password_box">
+                <label for="password_box">Пароль</label>
+                <%= f.password_field :password, placeholder: "Введите ваш пароль", class: "password_box", id: "password_box" %>
 
-                <button class="button">Войти</button>
-            </div>
+                <%= f.submit "Войти", class: "button" %>
+            <% end %>
 
             <div class="links">
                 <a href="/forbid_password">Забыли пароль?</a>

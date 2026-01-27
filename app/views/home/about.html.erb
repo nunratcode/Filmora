@@ -10,8 +10,8 @@
 
         <nav class="nav">
             <a href="/about">О нас</a>
-            <a href="/feed">Статьи</a>
-            <a href="/subscription">Подписка</a>
+            <a href="/feed">Лента</a>
+            <a href="/subscription">Статьи Filmora</a>
         </nav>
 
         <div class="icons">
@@ -23,7 +23,7 @@
             <a href="/favorites">
             <%= image_tag "favorites.svg", class: "icon" %>
             </a>
-            <a href="/signin">
+            <a href="<%= user_signed_in? ? '/profile' : '/signin' %>">
             <%= image_tag "user.svg", class: "icon" %>
             </a>
         </div> 

@@ -80,6 +80,10 @@ Rails.application.routes.draw do
   get "feed", to: "home#feed"
   get "user", to: "home#user"
 
+  # маршруты для авторизации через SessionsController
+  get    "/signin",  to: "sessions#new"
+  post   "/signin",  to: "sessions#create"
+  delete "/signout", to: "sessions#destroy"
 
   match "/403", to: "errors#forbidden", via: :all
   match "/404", to: "errors#not_found", via: :all
