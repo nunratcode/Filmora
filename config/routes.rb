@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Аутентификация через Devise
   devise_for :users
 
   # health check и PWA
@@ -6,25 +7,32 @@ Rails.application.routes.draw do
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-
-  # профили
+  # Профили
   resources :profiles, only: [ :index, :show, :new, :create, :edit, :update ] do
     member do
       get :content
+      get :bookmarks
     end
   end
 
-  # теги
+  # API
+  namespace :api do
+    resources :profiles, only: [ :update ]
+    resources :posts, only: [ :create, :update, :destroy ]
+    resources :comments, only: [ :create, :update, :destroy ]
+  end
+
+  # Теги
   resources :tags, only: [ :index, :show ]
 
-  # статьи
+  # Статьи
   resources :articles do
     collection do
       get :tagged
     end
   end
 
-  # посты
+  # Посты
   resources :posts do
     collection do
       get :feed
@@ -32,28 +40,28 @@ Rails.application.routes.draw do
       get :search
     end
 
-    # комменты
+    # Комменты
     resources :comments, only: [ :create, :edit, :update, :destroy ], shallow: true
 
-    # лайки и закладки
+    # Лайки и закладки
     resources :likes, only: [ :create ], shallow: true
     resources :favorites, only: [ :create ], shallow: true
 
-    # тонглы для лайков и закладок
+    # Тогглы для лайков и закладок
     member do
       post :toggle_like
       post :toggle_bookmark
     end
   end
 
-  # удаление лайков и закладок
+  # Удаление лайков и закладок
   resources :likes, only: [ :destroy ]
   resources :favorites, only: [ :destroy ]
 
-  # подписки
+  # Подписки
   resources :subscriptions, only: [ :create, :destroy ]
 
-  # сообщения
+  # Сообщения
   resources :messages, only: [ :index, :show, :create, :destroy ] do
     collection do
       get :sent
@@ -61,7 +69,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # админская часть
+  # Админская часть
   namespace :admin do
     root to: "dashboard#index"
     resources :users
@@ -73,22 +81,20 @@ Rails.application.routes.draw do
     resources :application_forms, only: [ :index, :show, :destroy ]
   end
 
+  # Статические страницы
   get "about", to: "home#about"
   get "willbesoon", to: "home#willbesoon"
-  get "signin", to: "home#signin"
-  get "registration", to: "home#registration"
   get "feed", to: "home#feed"
   get "user", to: "home#user"
+  get "registration", to: "home#registration"
+  get "signin", to: "home#signin" # если нужна отдельная страница входа в HTML
 
-  # маршруты для авторизации через SessionsController
-  get    "/signin",  to: "sessions#new"
-  post   "/signin",  to: "sessions#create"
-  delete "/signout", to: "sessions#destroy"
-
+  # Обработчики ошибок
   match "/403", to: "errors#forbidden", via: :all
   match "/404", to: "errors#not_found", via: :all
   match "/500", to: "errors#internal_error", via: :all
   match "*path", to: "errors#not_found", via: :all
 
+  # Главная страница
   root "home#about"
 end
