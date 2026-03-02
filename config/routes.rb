@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # Аутентификация через Devise
-  devise_for :users
-
   # health check и PWA
   get "up" => "rails/health#show", as: :rails_health_check
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
@@ -40,28 +37,21 @@ Rails.application.routes.draw do
       get :search
     end
 
-    # Комменты
     resources :comments, only: [ :create, :edit, :update, :destroy ], shallow: true
-
-    # Лайки и закладки
     resources :likes, only: [ :create ], shallow: true
     resources :favorites, only: [ :create ], shallow: true
 
-    # Тогглы для лайков и закладок
     member do
       post :toggle_like
       post :toggle_bookmark
     end
   end
 
-  # Удаление лайков и закладок
   resources :likes, only: [ :destroy ]
   resources :favorites, only: [ :destroy ]
 
-  # Подписки
   resources :subscriptions, only: [ :create, :destroy ]
 
-  # Сообщения
   resources :messages, only: [ :index, :show, :create, :destroy ] do
     collection do
       get :sent
@@ -81,20 +71,26 @@ Rails.application.routes.draw do
     resources :application_forms, only: [ :index, :show, :destroy ]
   end
 
-  # Статические страницы
+  # маршруты сессий для пользователей
+  get    "/signin",  to: "sessions#new"
+  post   "/signin",  to: "sessions#create"
+  delete "/signout", to: "sessions#destroy"
+
+  resources :users, only: [ :new, :create, :edit, :update, :show ]
+
+  # статические страницы
   get "about", to: "home#about"
   get "willbesoon", to: "home#willbesoon"
   get "feed", to: "home#feed"
   get "user", to: "home#user"
   get "registration", to: "home#registration"
-  get "signin", to: "home#signin" # если нужна отдельная страница входа в HTML
 
-  # Обработчики ошибок
+  # обработчики ошибок
   match "/403", to: "errors#forbidden", via: :all
   match "/404", to: "errors#not_found", via: :all
   match "/500", to: "errors#internal_error", via: :all
   match "*path", to: "errors#not_found", via: :all
 
-  # Главная страница
+  # главная страница
   root "home#about"
 end
