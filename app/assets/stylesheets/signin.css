@@ -61,7 +61,7 @@
 /* ОСНОВНОЕ */
 
 .login_page {
-    min-height: calc(97vh - 80px); 
+    min-height: calc(110vh - 80px); 
     background: var(--grey);
     max-width: 100%;
     display: flex;
@@ -131,6 +131,27 @@ label input {
 }
 
 .email_box.filled {
+    border: 0.15rem solid var(--black);
+    color: var(--black);
+}
+
+.username_box {
+    border: 0.15rem solid var(--black_30);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black_30);
+    box-sizing: border-box;
+    transition: color 0.5s;
+}
+
+.username_box:hover{
+    color: var(--black);
+}
+
+.username_box.filled {
     border: 0.15rem solid var(--black);
     color: var(--black);
 }

@@ -15,8 +15,8 @@ class User < ApplicationRecord
 
   # Валидации
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true
-  validates :password, length: { minimum: 6 }, if: -> { new_record? || !password.nil? }
+  validates :username, presence: true
+  validates :password, presence: true, length: { minimum: 6 }
 
   def full_name
     "#{profile&.first_name} #{profile&.last_name}"

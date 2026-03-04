@@ -71,10 +71,14 @@ Rails.application.routes.draw do
     resources :application_forms, only: [ :index, :show, :destroy ]
   end
 
-  # маршруты сессий для пользователей
+  # вход
   get    "/signin",  to: "sessions#new"
   post   "/signin",  to: "sessions#create"
   delete "/signout", to: "sessions#destroy"
+
+  # регистрация
+  get  "/registration", to: "users#new",    as: :registration
+  post "/registration", to: "users#create"
 
   resources :users, only: [ :new, :create, :edit, :update, :show ]
 
@@ -83,7 +87,7 @@ Rails.application.routes.draw do
   get "willbesoon", to: "home#willbesoon"
   get "feed", to: "home#feed"
   get "user", to: "home#user"
-  get "registration", to: "home#registration"
+
 
   # обработчики ошибок
   match "/403", to: "errors#forbidden", via: :all

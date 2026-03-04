@@ -34,15 +34,20 @@
         <div class="big">РЕГИСТРАЦИЯ</div>
 
         <div class="card-wrapper">
-            <div class="card">
-                <label for="card_text">E-mail</label>
-                <input type="email" placeholder="Введите ваш e-mail" class="email_box">
+            <%= form_with model: @user, url: registration_path, method: :post, html: { class: "card" } do |f| %>
 
-                <label for="card_text">Пароль</label>
-                <input type="password" placeholder="Придумайте пароль" class="password_box">
+                <label>E-mail</label>
+                <%= f.email_field :email, placeholder: "Введите ваш e-mail", class: "email_box" %>
 
-                <button class="button">Зарегистрироваться</button>
-            </div>
+                <label>Никнейм</label>
+                <%= f.text_field :username, placeholder: "Придумайте никнейм", class: "username_box" %>
+
+                <label>Пароль</label>
+                <%= f.password_field :password, placeholder: "Придумайте пароль", class: "password_box" %>
+
+                <%= f.submit "Зарегистрироваться", class: "button" %>
+
+            <% end %>
 
             <div class="links">
                 <a href="/signin">Уже есть аккаунт?</a>
