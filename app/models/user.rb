@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  # Ассоциации
+  # ассоциации
   has_one :profile, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -13,10 +13,17 @@ class User < ApplicationRecord
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id", dependent: :destroy
   has_many :articles, dependent: :destroy
 
-  # Валидации
+  # валидации
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true
   validates :password, presence: true, length: { minimum: 6 }
+
+  # сброс пароля
+  def generate_password_reset
+    self.reset_password_token = SecureRandom.urlsafe_base64
+    self.reset_password_sent_at = Time.current
+    save!
+  end
 
   def full_name
     "#{profile&.first_name} #{profile&.last_name}"

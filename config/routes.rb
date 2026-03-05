@@ -82,6 +82,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :new, :create, :edit, :update, :show ]
 
+  # сброс пароля
+  get  "/password_reset",        to: "password_resets#new",    as: :password_reset
+  post "/password_reset",        to: "password_resets#create"
+  get  "/password_reset/:token", to: "password_resets#edit",   as: :edit_password_reset
+  patch "/password_reset/:token", to: "password_resets#update"
+
+  resources :password_resets, only: [ :new, :create, :edit, :update ]
+
   # статические страницы
   get "about", to: "home#about"
   get "willbesoon", to: "home#willbesoon"
