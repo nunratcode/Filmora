@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to "/user"
     else
       flash.now[:alert] = "Неправильный email или пароль"
-      render :new
+      render "home/signin"  # <-- здесь указали правильный путь
     end
   end
 

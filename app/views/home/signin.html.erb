@@ -42,7 +42,13 @@
         <div class="big">ВХОД</div>
 
         <div class="card-wrapper">
+
             <%= form_with url: signin_path, method: :post, html: { class: "card" } do |f| %>
+
+                <% if flash.now[:alert] %>
+                    <input type="text" readonly class="error_box" value="<%= flash.now[:alert] %>">
+                <% end %>
+
                 <label for="email_box">E-mail</label>
                 <%= f.email_field :email, placeholder: "Введите ваш e-mail", class: "email_box", id: "email_box" %>
 
@@ -51,6 +57,7 @@
 
                 <%= f.submit "Войти", class: "button" %>
             <% end %>
+
 
             <div class="links">
                 <a href="/password_resets/new">Забыли пароль?</a>
