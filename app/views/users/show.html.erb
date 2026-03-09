@@ -16,23 +16,44 @@
 
         <div class="icons">
             <% if user_signed_in? %>
-            <a href="/letterbox">
-                <%= image_tag "letterbox.svg", class: "icon" %>
-            </a>
+            <%= link_to signout_path, method: :delete do %>
+                <%= image_tag("exit.svg", class: "icon") %>
             <% end %>
+            <% end %>
+
             <a href="/favorites">
             <%= image_tag "favorites.svg", class: "icon" %>
             </a>
+
             <a href="/signin">
             <%= image_tag "user.svg", class: "icon" %>
             </a>
         </div> 
     </header>
+    <!-- ПРОФИЛЬ -->
+    <main class="profile_page">
 
-    <!-- НАСТРОЙКИ -->
-    <a href="#">
-        <%= image_tag "grainshift.svg", class: "grainshift" %>
-    </a>
+        <div class="profile">
+
+            <div class="leftblock">
+                <div class="avatar">
+                    <%= image_tag(@user.profile&.avatar_url || "default_avatar.png", 
+                                alt: @user.username, 
+                                class: "avatar-img") %>
+                </div>
+                <div class="info">
+                    <div class="username"><%= @user.username %></div>
+                    <div class="email"><%= @user.email %></div>
+                </div>
+            </div>
+
+            <div class="edit">
+                <%= link_to "Редактировать профиль", edit_user_path(@user), class: "editbutton" %>
+            </div>
+
+        </div>
+
+    </main>
 
     <!-- ОБСУЖДЕНИЯ -->   
     <div class="big">ОБСУЖДЕНИЯ</div>

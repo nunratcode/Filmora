@@ -11,21 +11,29 @@
         <nav class="nav">
             <a href="/about">О нас</a>
             <a href="/feed">Лента</a>
-            <a href="/subscription">Статьи Filmora</a>
+            <a href="/subscription">Подписка</a>
         </nav>
 
         <div class="icons">
             <% if user_signed_in? %>
-            <a href="/letterbox">
-                <%= image_tag "letterbox.svg", class: "icon" %>
-            </a>
+                <%= button_to signout_path, method: :delete, class: "icon_button" do %>
+                    <%= image_tag "exit.svg", class: "icon" %>
+                <% end %>
             <% end %>
+
             <a href="/favorites">
             <%= image_tag "favorites.svg", class: "icon" %>
             </a>
-            <a href="/signin">
-            <%= image_tag "user.svg", class: "icon" %>
-            </a>
+
+            <% if user_signed_in? %>
+                <a href="/user">
+                    <%= image_tag "user.svg", class: "icon" %>
+                </a>
+            <% else %>
+                <a href="/signin">
+                    <%= image_tag "user.svg", class: "icon" %>
+                </a>
+            <% end %>
         </div> 
     </header>
 

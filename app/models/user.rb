@@ -12,11 +12,16 @@ class User < ApplicationRecord
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
   has_many :received_messages, class_name: "Message", foreign_key: "recipient_id", dependent: :destroy
   has_many :articles, dependent: :destroy
+  has_one_attached :avatar
 
   # валидации
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true
   validates :password, presence: true, length: { minimum: 6 }
+
+  def avatar_url
+    avatar.present? ? avatar : "/default_avatar.png"
+  end
 
   # сброс пароля
   def generate_password_reset

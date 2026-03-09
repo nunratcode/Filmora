@@ -74,7 +74,9 @@ Rails.application.routes.draw do
   # вход
   get    "/signin",  to: "sessions#new"
   post   "/signin",  to: "sessions#create"
-  delete "/signout", to: "sessions#destroy"
+
+  # выход
+  delete "/signout", to: "sessions#destroy", as: :signout
 
   # регистрация
   get  "/registration", to: "users#new",    as: :registration
@@ -90,11 +92,14 @@ Rails.application.routes.draw do
 
   resources :password_resets, only: [ :new, :create, :edit, :update ]
 
+  # страница пользователя
+  resources :users, only: [ :new, :create, :edit, :update, :show ]
+  get "/user", to: "users#show"
+
   # статические страницы
   get "about", to: "home#about"
   get "willbesoon", to: "home#willbesoon"
   get "feed", to: "home#feed"
-  get "user", to: "home#user"
 
 
   # обработчики ошибок

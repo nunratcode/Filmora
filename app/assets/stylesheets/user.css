@@ -14,7 +14,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--black);
-    min-height: 100vh;
     display: block;
     flex-direction: column;
     justify-content: left;
@@ -56,19 +55,92 @@ body {
 
 .icons {
     display: flex;
+    align-items: center;
     gap: 1.8rem;
     flex-shrink: 0;
 }
 
-/* НАСТРОЙКИ */
+.icon_button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
 
-.grainshift {
-    margin-top: 9rem;
-    margin-bottom: 6rem;
-    width: 35rem;
-    height: auto;
+.icons a,
+.icons button {
+  display: flex;
+  align-items: center;
+}
+
+/* ПРОФИЛЬ */
+
+.profile_page {
+    padding-top: 8rem; /* отступ от хедера */
+    padding-bottom: 6rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+}
+
+/* Основной блок профиля */
+.profile {
+    display: flex;
+    justify-content: space-between; /* слева - аватар+инфо, справа - кнопка */
+    align-items: flex-start; /* выравнивание по верхней границе */
+}
+
+.avatar-img {
+    width: 7rem;
+    border-radius: 0.7rem;
+}
+
+.leftblock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem; /* расстояние между аватаром и инфо */
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 7rem
+}
+
+.username {
     color: var(--white);
-    margin-left: 1.5rem;
+    font-family: var(--font-widock-trial);
+    font-size: 3.75rem;
+}
+
+.email {
+    color: var(--white);
+    font-family: var(--font-widock-trial);
+    font-size: 2rem;
+}
+
+.editbutton {
+    align-self: flex-start;
+    background-color: var(--white_35);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+    outline: var(--white_35);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    padding: 0.75rem 3rem;
+    transition: 0.3s;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+.editbutton:hover {
+    background-color: var(--white);
 }
 
 /* ОБСУЖДЕНИЯ */
@@ -140,8 +212,8 @@ body {
     font-family: var(--font-builder-mono);
     color: var(--black);
     outline: var(--white_35);
-    margin-right: 1.5rem;
-    padding: 1rem 2rem;
+    margin-right: 2rem;
+    padding: 0.75rem 3rem;
     transition: 0.3s;
     box-shadow: none;
     outline: none;
