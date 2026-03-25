@@ -30,6 +30,7 @@
             </a>
         </div> 
     </header>
+
     <!-- ПРОФИЛЬ -->
     <main class="profile_page">
 
@@ -37,10 +38,11 @@
 
             <div class="leftblock">
                 <div class="avatar">
-                    <%= image_tag(@user.profile&.avatar_url || "default_avatar.png", 
-                                alt: @user.username, 
-                                class: "avatar-img") %>
-                </div>
+                    <%= image_tag(
+                        @user.avatar.attached? ? url_for(@user.avatar) : "default_avatar.png",
+                        class: "avatar_img"
+                    ) %>
+                    </div>
                 <div class="info">
                     <div class="username"><%= @user.username %></div>
                     <div class="email"><%= @user.email %></div>
@@ -48,7 +50,7 @@
             </div>
 
             <div class="edit">
-                <%= link_to "Редактировать профиль", edit_user_path(@user), class: "editbutton" %>
+                <%= link_to "Редактировать профиль", edit_user_path(@user), class: "edit_button" %>
             </div>
 
         </div>

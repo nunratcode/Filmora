@@ -17,7 +17,7 @@ class User < ApplicationRecord
   # валидации
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }, allow_nil: true
 
   def avatar_url
     avatar.present? ? avatar : "/default_avatar.png"

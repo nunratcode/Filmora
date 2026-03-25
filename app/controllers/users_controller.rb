@@ -1,17 +1,20 @@
 class UsersController < ApplicationController
-  before_action :require_login, only: [ :show ]
+  before_action :require_login, only: [ :show, :edit, :update ]
 
+  # Профиль пользователя
   def show
     @user = current_user
   end
 
+  # Форма регистрации
   def new
     @user = User.new
     render "home/registration"
   end
 
+  # Создание нового пользователя
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params_create)
 
     if @user.save
       session[:user_id] = @user.id
@@ -21,13 +24,52 @@ class UsersController < ApplicationController
     end
   end
 
+  # Форма редактирования профиля
+  def edit
+    @user = current_user
+  end
+
+  # Сохранение изменений профиля
+  def update
+    @user = current_user
+
+    # Обработка аватара с уменьшением размера
+    if params[:user][:avatar].present?
+      uploaded_file = params[:user][:avatar]
+      image = MiniMagick::Image.read(uploaded_file.tempfile)
+      image.resize "300x300>" # максимальный размер 300x300, пропорции сохраняются
+
+      # Перезаписываем аватар
+      @user.avatar.attach(
+        io: File.open(image.path),
+        filename: uploaded_file.original_filename,
+        content_type: uploaded_file.content_type
+      )
+    end
+
+    # Обновление остальных полей (username)
+    if @user.update(user_params_update)
+      redirect_to "/user", notice: "Профиль обновлён"
+    else
+      Rails.logger.debug @user.errors.full_messages
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
+  # Проверка авторизации
   def require_login
     redirect_to "/signin" unless current_user
   end
 
-  def user_params
+  # Параметры для регистрации
+  def user_params_create
     params.require(:user).permit(:email, :username, :password)
+  end
+
+  # Параметры для редактирования профиля
+  def user_params_update
+    params.require(:user).permit(:username) # email и пароль не меняем
   end
 end

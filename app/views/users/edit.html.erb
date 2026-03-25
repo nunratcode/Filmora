@@ -1,0 +1,65 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "edit", media: "all" %>
+
+<body>
+    
+    <!-- ХЕДЕР -->
+    <header class="header">
+        <div class="header_logo">FILMORA</div>
+
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Лента</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
+
+        <div class="icons">
+            <% if user_signed_in? %>
+            <%= link_to signout_path, method: :delete do %>
+                <%= image_tag("exit.svg", class: "icon") %>
+            <% end %>
+            <% end %>
+
+            <a href="/favorites">
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+
+            <a href="/signin">
+            <%= image_tag "user.svg", class: "icon" %>
+            </a>
+        </div> 
+    </header>
+
+    <!-- РЕДАКТИРОВАТЬ -->
+    <main class="edit_page">
+
+        <div class="big">РЕДАКТИРОВАТЬ ПРОФИЛЬ</div>
+
+        <%= form_with model: @user, local: true, html: { multipart: true } do |f| %>
+
+            <div class="avatar_block">
+                <div class="avatar_preview">
+                    <%= image_tag @user.avatar_filename.present? ? "/uploads/#{@user.avatar_filename}" : "default_avatar.png" %>
+                </div>
+                <div class="avatar_controls">
+                    <label class="small">Изменить аватар</label>
+                    <%= f.file_field :avatar, class: "file_input" %>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <label class="small">Ваше имя</label>
+                <%= f.text_field :username, class: "username_box" %>
+
+                <label class="small">Ваш Email</label>
+                <%= f.email_field :email, class: "email_box", readonly: true %>
+
+                <%= f.submit "Сохранить изменения", class: "savebutton" %>
+            </div>
+
+        <% end %>
+
+    </main>
+
+</body>

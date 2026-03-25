@@ -77,21 +77,21 @@ body {
 /* ПРОФИЛЬ */
 
 .profile_page {
-    padding-top: 8rem; /* отступ от хедера */
+    padding-top: 8rem; 
     padding-bottom: 6rem;
     padding-left: 2rem;
     padding-right: 1rem;
 }
 
-/* Основной блок профиля */
 .profile {
     display: flex;
     justify-content: space-between; /* слева - аватар+инфо, справа - кнопка */
     align-items: flex-start; /* выравнивание по верхней границе */
 }
 
-.avatar-img {
+.avatar_img {
     width: 7rem;
+    height: 7rem;
     border-radius: 0.7rem;
 }
 
@@ -99,7 +99,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1.5rem; /* расстояние между аватаром и инфо */
+    gap: 1.5rem; 
 }
 
 .info {
@@ -121,7 +121,7 @@ body {
     font-size: 2rem;
 }
 
-.editbutton {
+.edit_button {
     align-self: flex-start;
     background-color: var(--white_35);
     border-radius: 0.5rem;
