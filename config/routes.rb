@@ -113,7 +113,8 @@ Rails.application.routes.draw do
   match "/403", to: "errors#forbidden", via: :all
   match "/404", to: "errors#not_found", via: :all
   match "/500", to: "errors#internal_error", via: :all
-  match "*path", to: "errors#not_found", via: :all
+  match "*path", to: "errors#not_found", via: :all,
+    constraints: lambda { |req| !req.path.start_with?("/rails/active_storage") }
 
   # главная страница
   root "home#about"

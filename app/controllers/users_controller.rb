@@ -33,21 +33,10 @@ class UsersController < ApplicationController
   def update
     @user = current_user
 
-    # Обработка аватара с уменьшением размера
     if params[:user][:avatar].present?
-      uploaded_file = params[:user][:avatar]
-      image = MiniMagick::Image.read(uploaded_file.tempfile)
-      image.resize "300x300>" # максимальный размер 300x300, пропорции сохраняются
-
-      # Перезаписываем аватар
-      @user.avatar.attach(
-        io: File.open(image.path),
-        filename: uploaded_file.original_filename,
-        content_type: uploaded_file.content_type
-      )
+      @user.avatar.attach(params[:user][:avatar])
     end
 
-    # Обновление остальных полей (username)
     if @user.update(user_params_update)
       redirect_to "/user", notice: "Профиль обновлён"
     else
