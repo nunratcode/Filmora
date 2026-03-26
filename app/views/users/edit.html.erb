@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag "fonts", media: "all" %>
 <%= stylesheet_link_tag "colors", media: "all" %>
 <%= stylesheet_link_tag "edit", media: "all" %>
+<%= javascript_include_tag "edit", defer: true %>
 
 <body>
     
@@ -31,10 +32,8 @@
         </div> 
     </header>
 
-    <!-- РЕДАКТИРОВАТЬ -->
+    <!-- РЕДАКТИРОВАТЬ --> 
     <main class="edit_page">
-
-        <div class="big">РЕДАКТИРОВАТЬ ПРОФИЛЬ</div>
 
         <%= form_with model: @user, local: true, html: { multipart: true } do |f| %>
 
@@ -43,11 +42,14 @@
                     <%= image_tag(
                         @user.avatar.attached? ? url_for(@user.avatar) : "default_avatar.png",
                         class: "avatar_img"
-                        ) %>
+                    ) %>
                 </div>
                 <div class="avatar_controls">
                     <label class="small">Изменить аватар</label>
-                    <%= f.file_field :avatar %>
+                    <label class="new_input">
+                        <%= f.file_field :avatar, class: "input" %>
+                        Выбрать файл
+                    </label>
                 </div>
             </div>
 

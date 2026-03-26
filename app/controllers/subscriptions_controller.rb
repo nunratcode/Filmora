@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+  require "ostruct"
   def create
     email = params[:subscription][:email]
     subscription_type = params[:subscription][:subscription_type]

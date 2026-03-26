@@ -83,32 +83,30 @@ body {
 
 /* РЕДАКТИРОВАТЬ */
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .edit_page {
-    padding-top: 8rem; 
+    padding-top: 12rem; 
     padding-bottom: 6rem;
     padding-left: 2rem;
     padding-right: 1rem;
-    justify-content: left;
-}
-
-.big {
-    font-size: 2.5rem;
-    font-family: var(--font-widock-trial);
-    color: var(--white);
-    margin-left: 0rem;
-    margin-bottom: 3rem;
-    padding: 0;
+    justify-content: center; 
 }
 
 .edit {
     display: flex;
     flex-direction: column;
     background-color: transparent;
-    justify-content: left;
+    justify-content: center;
 }
 
 .avatar_block {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 2rem;
 }
@@ -125,13 +123,43 @@ body {
     font-family: var(--font-builder-mono);
     color: var(--white);
     padding: 0;
+    margin: 0;
 
 }
 
 .avatar_controls {
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input {
+    display: none; 
+}
+
+.new_input {
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--white_35);
+    border-radius: 0.75rem;
     gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+    padding: 0.6rem 1.5rem;
+    transition: 0.3s;
+}
+
+.new_input:hover {
+    background-color: var(--white);
+}
+
+.new_input.selected {
+    background-color: var(--white);
 }
 
 .wrapper{ 
@@ -176,9 +204,9 @@ body {
 }
 
 .savebutton {
-    align-self: flex-start;
+    align-self: center;
     background-color: var(--white_35);
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     font-size: 1.5rem;
     font-family: var(--font-builder-mono);
     color: var(--black);
