@@ -40,11 +40,14 @@
 
             <div class="avatar_block">
                 <div class="avatar_preview">
-                    <%= image_tag @user.avatar_filename.present? ? "/uploads/#{@user.avatar_filename}" : "default_avatar.png" %>
+                    <%= image_tag(
+                        @user.avatar.attached? ? url_for(@user.avatar) : "default_avatar.png",
+                        class: "avatar_img"
+                        ) %>
                 </div>
                 <div class="avatar_controls">
                     <label class="small">Изменить аватар</label>
-                    <%= f.file_field :avatar, class: "file_input" %>
+                    <%= f.file_field :avatar %>
                 </div>
             </div>
 

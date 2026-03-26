@@ -42,7 +42,7 @@
                         @user.avatar.attached? ? url_for(@user.avatar) : "default_avatar.png",
                         class: "avatar_img"
                     ) %>
-                    </div>
+                </div>
                 <div class="info">
                     <div class="username"><%= @user.username %></div>
                     <div class="email"><%= @user.email %></div>
@@ -50,7 +50,7 @@
             </div>
 
             <div class="edit">
-                <%= link_to "Редактировать профиль", edit_user_path(@user), class: "edit_button" %>
+                <%= link_to "Редактировать профиль", edit_user_path(@user), class: "editbutton" %>
             </div>
 
         </div>

@@ -92,36 +92,45 @@ body {
 .avatar_img {
     width: 7rem;
     height: 7rem;
+    object-fit: cover;
     border-radius: 0.7rem;
 }
 
 .leftblock {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 1.5rem; 
+    align-items: flex-start;
+    gap: 1.5rem;
 }
 
 .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 7rem
+    height: 7rem;
+    padding-top: 0; 
 }
 
 .username {
     color: var(--white);
     font-family: var(--font-widock-trial);
     font-size: 3.75rem;
+    line-height: 1; 
 }
 
 .email {
     color: var(--white);
     font-family: var(--font-widock-trial);
     font-size: 2rem;
+    line-height: 1;
 }
 
-.edit_button {
+.edit {
+    display: flex;
+    align-items: flex-start;
+}
+
+.editbutton {
     align-self: flex-start;
     background-color: var(--white_35);
     border-radius: 0.5rem;

@@ -134,7 +134,7 @@ body {
     gap: 0.5rem;
 }
 
-.wrapper{
+.wrapper{ 
     display: flex;
     flex-direction: column;
     justify-content: left;
