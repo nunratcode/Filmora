@@ -41,11 +41,9 @@
     </header>
 
     <!-- ПОДПИСКА -->
-
-    <section class="info">
-
-        <div class="big">ПОДПИСКА</div>
-
+    <div class="big">ПОДПИСКА</div>
+    
+    <div class="wrap">
         <div class="sections_tabs">
             <button class="sections_tab active" data-tab="about">Подробнее</button>
             <button class="sections_tab" data-tab="types">Виды</button>
@@ -53,17 +51,15 @@
         </div>
 
         <div class="sections_cards">
-            <!-- Подробнее -->
+            <!-- Подробнее --> 
             <article class="section_card active" data-content="about">
                 <h3 class="section_card_title">ЧТО ТАКОЕ ПОДПИСКА?</h3>
                 <div class="data">Оформив подписку вы будете ежемесячно получать новый айтем от Filmora в свою аудио-коллекцию. При&nbsp;оформлении можно выбрать тип подписки.</div>
-                <a href="#" class="section_card_link">Оформить подписку →</a>
             </article>
 
             <article class="section_card active" data-content="about">
                 <h3 class="section_card_title">ЗАЧЕМ НУЖНА ПОДПИСКА?</h3>
                 <div class="data">Подписка не только приносит вам положительные эмоции, а также помогает Filmora развиваться как проекту и меньше зависеть от рекламы.</div>
-                <a href="#" class="section_card_link">Оформить подписку →</a>
             </article>
 
             <!-- Виды -->
@@ -83,18 +79,18 @@
             <article class="section_card" data-content="pay">
                 <h3 class="section_card_title">КАК ОПЛАТИТЬ ПОДПИСКУ?</h3>
                 <div class="data">Все просто: вы заполняете форму и мы отправляем вам на почту ссылку на оплату. После оплаты вам придет подтверждение и скоро вы получите свой диск или пластинку.</div>
-                <a href="#" class="section_card_link">Оформить подписку →</a>
             </article>
 
             <article class="section_card" data-content="pay">
                 <h3 class="section_card_title">А КАКОЙ СРОК ПОДПИСКИ?</h3>
                 <div class="data">При оформлении подписки можно указать, на сколько месяцев вы хотели бы оформить подписку. Также вы можете оформит две подписки: и на CD и на винил, или подарить подписку другу. </div>
-                <a href="#" class="section_card_link">Оформить подписку →</a>
             </article>
         </div>
-    </section>
+    </div>
 
     <!-- ОФОРМИТЬ ПОДПИСКУ -->
+
+    <div class="small">ОФОРМИТЬ ПОДПИСКУ</div>
     
     <section class="subscription_page">
 
@@ -108,22 +104,38 @@
 
             <label>Тип подписки</label>
             <div class="radiobuttons">
-                <%= f.radio_button :subscription_type, "CD" %> CD
-                <%= f.radio_button :subscription_type, "Vinyl" %> Vinyl
+                <label class="radio_label">
+                    <%= f.radio_button :subscription_type, "CD", class: "radio_input" %> CD
+                </label>
+                <label class="radio_label">
+                    <%= f.radio_button :subscription_type, "Vinyl", class: "radio_input" %> Vinyl
+                </label>
             </div>
 
             <label>Для кого подписка</label>
             <div class="radiobuttons">
-                <%= f.radio_button :for_whom, "self" %> Для себя
-                <%= f.radio_button :for_whom, "gift" %> В подарок
+                <label class="radio_label">
+                    <%= f.radio_button :for_whom, "self", class: "radio_input" %> Для себя
+                </label>
+                <label class="radio_label">
+                    <%= f.radio_button :for_whom, "gift", class: "radio_input" %> В подарок
+                </label>
             </div>
 
             <label>Срок подписки</label>
             <div class="radiobuttons">
-                <%= f.radio_button :duration, "1_month" %> 1 месяц
-                <%= f.radio_button :duration, "3_months" %> 3 месяца
-                <%= f.radio_button :duration, "6_months" %> 6 месяцев
-                <%= f.radio_button :duration, "12_months" %> 12 месяцев
+                <label class="radio_label">
+                    <%= f.radio_button :duration, "1_month", class: "radio_input" %> 1 месяц
+                </label>
+                <label class="radio_label">
+                    <%= f.radio_button :duration, "3_months", class: "radio_input" %> 3 месяца
+                </label>
+                <label class="radio_label">
+                    <%= f.radio_button :duration, "6_months", class: "radio_input" %> 6 месяцев
+                </label>
+                <label class="radio_label">
+                    <%= f.radio_button :duration, "12_months", class: "radio_input" %> 12 месяцев
+                </label>
             </div>
 
             <%= f.submit "Оформить подписку", class: "button", id: "subscription_button" %>

@@ -83,25 +83,26 @@ body {
 
 /* ПОДПИСКА */
 
-.info {
-    display: flex;
-    flex-direction: column;
-    padding: 8rem 2rem 0rem 2rem; 
-}
-
 .big {
-    margin: 0; 
+    padding-top: 8rem;
     margin-bottom: 2rem;
+    margin-right: 2rem;
     font-size: 6.8rem;
     font-family: var(--font-widock-trial);
     color: var(--white);
     text-align: left;
 }
 
+.wrap {
+    display: flex;
+    flex-direction: column ;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
 .sections_tabs {
     display: flex;
     gap: 1rem;
-    margin: 1rem 0 2rem 0; 
     flex-wrap: wrap;
 }
 
@@ -127,6 +128,7 @@ body {
     background-color: var(--white);
     border-radius: 1.5rem;
     padding: 1.5rem;
+    align-content: start; 
 }
 
 .section_card {
@@ -179,9 +181,18 @@ body {
 
 /* ОФОРМЛЕНИЕ */
 
+.small {
+    font-size: 4.75rem;
+    font-family: var(--font-widock-trial);
+    color: var(--white);
+    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
 .subscription_page {
-    margin-top: 30rem;
-    padding: 4rem 2rem;
+    margin-top: 0;
+    padding: 2rem 2rem;
     background-color: var(--black);
     display: flex;
     flex-direction: column;
@@ -190,7 +201,7 @@ body {
 .subscription_form {
     background-color: var(--white);
     border-radius: 1.5rem;
-    padding: 3.5rem;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -272,12 +283,6 @@ label input {
     color: var(--black);
 }
 
-.radiobuttons {
-    font-size: 1.25rem;
-    font-family: var(--font-builder-mono);
-    color: var(--black);
-}
-
 .button {
     padding: 1rem 3.5rem; 
     background-color: var(--black_35);
@@ -296,4 +301,34 @@ label input {
 .button:hover{
   background-color: var(--black);
   color: var(--white);
+}
+
+.radio_input {
+    display: none; /* скрываем стандартный */
+}
+
+.radio_label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black);
+    padding: 0.6rem 1.5rem;
+    border-radius: 2rem;
+    border: 0.15rem solid var(--black_30);
+    transition: 0.3s;
+}
+
+.radio_label:hover {
+    border-color: var(--black);
+}
+
+/* когда input выбран — стилизуем соседний label */
+.radio_input:checked + .radio_label,
+.radio_label:has(.radio_input:checked) {
+    background-color: var(--black);
+    color: var(--white);
+    border-color: var(--black);
 }
