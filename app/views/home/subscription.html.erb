@@ -1,0 +1,157 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "subscription", media: "all" %>
+<%= javascript_include_tag "email_password_input", defer: true %>
+<%= javascript_include_tag "tabs", defer: true %>
+<%= javascript_include_tag "subscription", defer: true %>
+
+<body>
+    
+    <!-- ХЕДЕР -->
+    <header class="header">
+        <div class="header_logo">FILMORA</div>
+
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Лента</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
+
+        <div class="icons">
+            <% if user_signed_in? %>
+                <%= button_to signout_path, method: :delete, class: "icon_button" do %>
+                    <%= image_tag "exit.svg", class: "icon" %>
+                <% end %>
+            <% end %>
+
+            <a href="/favorites">
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+
+            <% if user_signed_in? %>
+                <a href="/user">
+                    <%= image_tag "user.svg", class: "icon" %>
+                </a>
+            <% else %>
+                <a href="/signin">
+                    <%= image_tag "user.svg", class: "icon" %>
+                </a>
+            <% end %>
+        </div> 
+    </header>
+
+    <!-- ПОДПИСКА -->
+
+    <section class="info">
+
+        <div class="big">ПОДПИСКА</div>
+
+        <div class="sections_tabs">
+            <button class="sections_tab active" data-tab="about">Подробнее</button>
+            <button class="sections_tab" data-tab="types">Виды</button>
+            <button class="sections_tab" data-tab="pay">Оплата</button>
+        </div>
+
+        <div class="sections_cards">
+            <!-- Подробнее -->
+            <article class="section_card active" data-content="about">
+                <h3 class="section_card_title">ЧТО ТАКОЕ ПОДПИСКА?</h3>
+                <div class="data">Оформив подписку вы будете ежемесячно получать новый айтем от Filmora в свою аудио-коллекцию. При&nbsp;оформлении можно выбрать тип подписки.</div>
+                <a href="#" class="section_card_link">Оформить подписку →</a>
+            </article>
+
+            <article class="section_card active" data-content="about">
+                <h3 class="section_card_title">ЗАЧЕМ НУЖНА ПОДПИСКА?</h3>
+                <div class="data">Подписка не только приносит вам положительные эмоции, а также помогает Filmora развиваться как проекту и меньше зависеть от рекламы.</div>
+                <a href="#" class="section_card_link">Оформить подписку →</a>
+            </article>
+
+            <!-- Виды -->
+            <article class="section_card" data-content="types">
+                <h3 class="section_card_title">CD: ПОДПИСКА ПОМЕНЬШЕ</h3>
+                <div class="data">Эта подписка CD подойдет вам, если вы фанат Sony Diskman, любите эстетику 2000-х или обладатель авто с дисководом. Или если диски – ваш любимый формат без причины.</div>
+                <div class="cost">1199 ₽/мес</div>
+            </article>
+
+            <article class="section_card" data-content="types">
+                <h3 class="section_card_title">VINYL: ПОДПИСКА ПОБОЛЬШЕ</h3>
+                <div class="data">Подписка на винил понравится вам, если вы ценитель полного погружения в аналог: достать проигрыватель, упустить иглу, запустить проигрыватель... Или если у вас много свободного места на полках.</div>
+                <div class="cost">3499 ₽/мес</div>
+            </article>
+
+            <!-- Оплата -->
+            <article class="section_card" data-content="pay">
+                <h3 class="section_card_title">КАК ОПЛАТИТЬ ПОДПИСКУ?</h3>
+                <div class="data">Все просто: вы заполняете форму и мы отправляем вам на почту ссылку на оплату. После оплаты вам придет подтверждение и скоро вы получите свой диск или пластинку.</div>
+                <a href="#" class="section_card_link">Оформить подписку →</a>
+            </article>
+
+            <article class="section_card" data-content="pay">
+                <h3 class="section_card_title">А КАКОЙ СРОК ПОДПИСКИ?</h3>
+                <div class="data">При оформлении подписки можно указать, на сколько месяцев вы хотели бы оформить подписку. Также вы можете оформит две подписки: и на CD и на винил, или подарить подписку другу. </div>
+                <a href="#" class="section_card_link">Оформить подписку →</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ОФОРМИТЬ ПОДПИСКУ -->
+    
+    <section class="subscription_page">
+
+        <%= form_with model: @subscription, local: false, html: { class: "subscription_form" } do |f| %>
+
+            <label>Ваш Email</label>
+            <%= f.email_field :email, placeholder: "Введите ваш e-mail", class: "email_box", id: "email_box" %>
+
+            <label>Ваш адрес</label>
+            <%= f.text_field :text, placeholder: "Город, улица, дом, квартира, индекс", class: "text_box", id: "text_box" %>
+
+            <label>Тип подписки</label>
+            <div class="radiobuttons">
+                <%= f.radio_button :subscription_type, "CD" %> CD
+                <%= f.radio_button :subscription_type, "Vinyl" %> Vinyl
+            </div>
+
+            <label>Для кого подписка</label>
+            <div class="radiobuttons">
+                <%= f.radio_button :for_whom, "self" %> Для себя
+                <%= f.radio_button :for_whom, "gift" %> В подарок
+            </div>
+
+            <label>Срок подписки</label>
+            <div class="radiobuttons">
+                <%= f.radio_button :duration, "1_month" %> 1 месяц
+                <%= f.radio_button :duration, "3_months" %> 3 месяца
+                <%= f.radio_button :duration, "6_months" %> 6 месяцев
+                <%= f.radio_button :duration, "12_months" %> 12 месяцев
+            </div>
+
+            <%= f.submit "Оформить подписку", class: "button", id: "subscription_button" %>
+
+        <% end %>
+
+    </section>
+
+<!-- ФУТЕР -->
+    <footer class="footer">
+        <div class="footer_logo">
+            FILMORA
+        </div>
+        
+        <div class="footer_info">
+        <div>
+            <span class="label">
+            <span class="grey_text">создательницы:</span><br>
+            <span class="black_text">Александра Арефьева</span><br>
+            <span class="black_text">Старовойтова Евгения</span>
+        </div>
+
+        <div>
+            <span class="label">
+            <span class="grey_text">кураторы:</span><br>
+            <span class="black_text">Федор Ноздрин</span><br>
+            <span class="black_text">Захар День</span>
+        </div>
+    </footer>
+    
+</body>

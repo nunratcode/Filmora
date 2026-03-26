@@ -86,6 +86,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [ :new, :create, :edit, :update, :show ]
 
+  # подписка
+  get  "/subscription", to: "home#subscription"
+  post "/subscription", to: "home#create_subscription"
+
   # сброс пароля
   get  "/password_reset",        to: "password_resets#new",    as: :password_reset
   post "/password_reset",        to: "password_resets#create"
@@ -102,6 +106,7 @@ Rails.application.routes.draw do
   get "about", to: "home#about"
   get "willbesoon", to: "home#willbesoon"
   get "feed", to: "home#feed"
+  get "subscription", to: "home#subscription"
 
 
   # обработчики ошибок

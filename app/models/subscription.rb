@@ -1,4 +1,6 @@
-class Subscription < ApplicationRecord
-  belongs_to :subscriber, class_name: 'User'
-  belongs_to :subscribed_to, class_name: 'User'
+class Subscription
+  include ActiveModel::Model
+
+  attr_accessor :subscription_type, :for_whom, :duration
+  validates :subscription_type, :for_whom, :duration, presence: true
 end

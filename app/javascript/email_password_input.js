@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.querySelector(".email_box");
   const passwordInput = document.querySelector(".password_box");
   const usernameInput = document.querySelector(".username_box");
+  const textInput = document.querySelector(".text_box");
 
   if (emailInput) {
     emailInput.addEventListener("input", () => {
@@ -18,6 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (usernameInput) {
     usernameInput.addEventListener("input", () => {
       usernameInput.classList.toggle("filled", usernameInput.value.trim() !== "");
+    });
+  }
+
+  if (textInput) {
+    textInput.addEventListener("input", () => {
+      textInput.classList.toggle("filled", textInput.value.trim() !== "");
     });
   }
 });
