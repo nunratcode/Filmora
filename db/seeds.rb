@@ -22,7 +22,7 @@ def make_body(words, paragraphs = 3)
   Array.new(rand(1..paragraphs)) { make_paragraph(words, 4) }.join("\n\n")
 end
 
-['Favorite', 'Like', 'Comment', 'Message', 'Subscription', 'Tag', 'Post', 'User'].each do |const_name|
+[ 'Favorite', 'Like', 'Comment', 'Message', 'Subscription', 'Tag', 'Post', 'User' ].each do |const_name|
   if Object.const_defined?(const_name)
     model = Object.const_get(const_name)
     if model.table_exists?
@@ -30,7 +30,7 @@ end
       puts "  cleaned #{const_name}"
     end
   end
-end  
+end
 
 # теги
 fixed_tag_names = [
@@ -42,29 +42,19 @@ fixed_tag_names = [
   'ремонт',
   'усилители',
   'радиотехника',
-  'ламповый усилитель',
   'плёночная фотография',
-  'ретро звук',
   'diy',
   'коллекция',
   'обзор',
-  'кассетная культура',
-  'audiophile setup',
-  'vintage hi-fi',
-  'analog vibes',
-  'vinyl community',
-  'canon',
-  'panasonic',
-  'sony',
-  'pioneer',
-  'olimpus'
+  'кассетная культура'
 ]
 
-fixed_tags = fixed_tag_names.map do |raw|
+fixed_tag_names.each do |raw|
   name = raw.strip.downcase
-  Tag.find_or_create_by!(name: name) do |t|
-    t.fixed = true if t.respond_to?(:fixed=)
-  end
+
+  tag = Tag.find_or_initialize_by(name: name)
+  tag.fixed = true if tag.respond_to?(:fixed=)
+  tag.save!
 end
 
 puts "  tags count: #{Tag.count}"
@@ -76,31 +66,31 @@ puts "Creating users..."
 admin = User.find_or_initialize_by(email: 'admin@analogmedia.local')
 admin.username ||= 'admin'
 admin.admin = true if admin.respond_to?(:admin=)
-admin.password ||= 'password'  
+admin.password ||= 'password'
 admin.save!
 puts "  admin: #{admin.email}"
 
 # юзеры
 names = [
-  ["Alyay", "Nishii"],
-  ["Lia", "Aleksandrova"],
-  ["Alex", "Plosskiy"],
-  ["Jensen", "Acles"],
-  ["Misha", "Collins"],
-  ["Olga", "Sovunia"],
-  ["Maria", "Sileva"],
-  ["Julia", "Evgeneva"],
-  ["Jared", "Padaleki"],
-  ["Victoria", "Semenova"],
+  [ "Alyay", "Nishii" ],
+  [ "Lia", "Aleksandrova" ],
+  [ "Alex", "Plosskiy" ],
+  [ "Jensen", "Acles" ],
+  [ "Misha", "Collins" ],
+  [ "Olga", "Sovunia" ],
+  [ "Maria", "Sileva" ],
+  [ "Julia", "Evgeneva" ],
+  [ "Jared", "Padaleki" ],
+  [ "Victoria", "Semenova" ]
 ]
 
-users = [admin]
+users = [ admin ]
 
 names.each_with_index do |(first, last), idx|
   email = "user#{idx}@analogmedia.local"
   u = User.find_or_initialize_by(email: email)
   u.username ||= "#{first.downcase}_#{last.downcase}"
-  u.password ||= 'password' 
+  u.password ||= 'password'
   u.save!
   users << u
   puts "  user: #{u.email}"
@@ -108,7 +98,7 @@ end
 
 puts "  total users: #{User.count}"
 
-#статьи
+# статьи
 puts "Creating article..."
 articles = []
 
@@ -122,7 +112,7 @@ users.each do |user|
       "Где искать хороший винил в маленьком городе"
     ]
     title = title_candidates.sample
-    body = make_body(@words, 4) 
+    body = make_body(@words, 4)
     article = Article.create!(
       user: user,
       title: title,
@@ -166,7 +156,7 @@ users.each do |user|
       "Тонкости реставрации ламповых усилителей"
     ]
     title = title_candidates.sample
-    body = make_body(@words, 4) 
+    body = make_body(@words, 4)
     post = Post.create!(
       user: user,
       title: title,
@@ -202,7 +192,7 @@ posts.each do |post|
   rand(0..4).times do
     Comment.create!(
   user: users.sample,
-  commentable: post,    
+  commentable: post,
   body: make_paragraph(@words, 3)
   )
   end
@@ -219,7 +209,7 @@ posts.each do |post|
   end
 
   # закладки
-  favorites = users.sample(rand(0..[users.size/2, 1].max))
+  favorites = users.sample(rand(0..[ users.size/2, 1 ].max))
   favorites.each do |u|
     Favorite.find_or_create_by!(user: u, post: post)
   end
@@ -227,7 +217,7 @@ end
 puts "  likes: #{Like.count}, favorites: #{Favorite.count}"
 
 
-#Подписки: каждый подписан на 0..3 других пользователей
+# Подписки: каждый подписан на 0..3 других пользователей
 puts "Creating subscriptions..."
 users.each do |u|
   others = users.reject { |x| x == u }

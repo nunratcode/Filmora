@@ -214,7 +214,7 @@ body {
     align-items: flex-start;
 }
 
-.new_article {
+.create_post {
     background-color: var(--white_35);
     border-radius: 0.5rem;
     font-size: 1.5rem;
@@ -230,7 +230,7 @@ body {
     appearance: none;
 }
 
-.new_article:hover {
+.create_post:hover {
     background-color: var(--white);
 }
 

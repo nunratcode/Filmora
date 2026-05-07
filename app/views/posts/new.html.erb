@@ -1,0 +1,80 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "post", media: "all" %>
+<%= javascript_include_tag "post_tags", defer: true %>
+
+<body>
+    
+    <!-- ХЕДЕР -->
+    <header class="header">
+        <div class="header_logo">FILMORA</div>
+
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Лента</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
+
+        <div class="icons">
+            <% if user_signed_in? %>
+            <%= link_to signout_path, method: :delete do %>
+                <%= image_tag("exit.svg", class: "icon") %>
+            <% end %>
+            <% end %>
+
+            <a href="/favorites">
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+
+            <a href="/signin">
+            <%= image_tag "user.svg", class: "icon" %>
+            </a>
+        </div> 
+    </header>
+
+    <!-- СОЗДАТЬ ПОСТ -->
+
+    <div class="new_post">
+        <%= form_with model: @post, local: true do |f| %>
+
+            <%= f.text_field :title, placeholder: "Введите заголовок", class: "title" %>
+
+            <%= f.text_area :body, placeholder: "Введите текст поста", class: "body" %>
+
+            <label class="picture">Фото</label>
+            <%= f.file_field :image %>
+
+            <!-- КНОПКА -->
+            <button type="button" id="openTags">Добавить теги</button>
+
+            <!-- ВЫБРАННЫЕ ТЕГИ -->
+            <div id="selectedTags"></div>
+
+            <!-- POPUP -->
+            <div id="tagsPopup" class="popup hidden">
+                <div class="popup_content">
+
+                    <h3>Выберите теги</h3>
+
+                    <div class="tags_list">
+                        <% @tags.each do |tag| %>
+                            <div class="tag_option" data-id="<%= tag.id %>">
+                            <%= tag.name %>
+                            </div>
+                        <% end %>
+                    </div>
+
+                    <button type="button" id="saveTags">Сохранить</button>
+
+                </div>
+            </div>
+
+            <!-- СКРЫТОЕ ПОЛЕ ДЛЯ ОТПРАВКИ -->
+            <input type="hidden" name="post[tag_ids][]" id="tag_ids">
+
+            <%= f.submit "Опубликовать пост" %>
+
+    <% end %>
+    </div>
+
+</body>

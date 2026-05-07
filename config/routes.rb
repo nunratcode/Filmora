@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   end
 
   # Посты
+  resources :posts, only: [ :new, :create, :index, :show ]
   resources :posts do
     collection do
       get :feed

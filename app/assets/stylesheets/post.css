@@ -1,0 +1,134 @@
+:root {
+    --black: #101010;
+    --black_30: #10101030;
+    --black_35: #10101035;
+    --grey: #282828;
+    --white: #FFFFFF;
+    --white_35: #FFFFFF35;
+    --white_50: #ffffff50;
+    --font-builder-mono: 'Builder Mono', monospace;
+    --font-widock-trial: 'Widock TRIAL', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+    display: block;
+    flex-direction: column;
+    justify-content: left;
+}
+
+/* ХЕДЕР */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.header_logo {
+  font-size: 2.3rem;
+  font-family: var(--font-widock-trial);
+  flex-shrink: 0;
+  color: var(--white);
+}
+
+.nav {
+    display: flex;
+    gap: 5rem;
+    margin: 0 auto;
+}
+
+.nav a {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.25rem;
+    font-family: var(--font-builder-mono);
+    color: var(--white_50);
+    transition: 0.5s;
+}
+
+.nav a:hover {
+    color: var(--white);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    flex-shrink: 0;
+}
+
+.icon_button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.icons a,
+.icons button {
+  display: flex;
+  align-items: center;
+}
+
+/* СОЗДАТЬ ПОСТ */
+
+.new_post {
+    display: flex;
+    background-color: var(--white);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 8rem;
+    padding: 2.5rem;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-family: var(--font-widock-trial);
+    color: var(--black_35);
+}
+
+.body {
+    font-size: 1.5rem;
+    font-family: var(--font-builder-mono);
+    color: var(--black_35);
+}
+
+/* ПОПАП */
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hidden {
+    display: none;
+}
+
+.popup_content {
+    background: var(--white);
+    padding: 2rem;
+    margin: 5rem auto;
+    width: 300px;
+    border-radius: 1rem;
+}
+
+.tag_option {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.tag_option.active {
+    background: #fff;
+    color: #000;
+}
