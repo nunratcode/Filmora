@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const emailInput = document.querySelector(".email_box");
+  const emailInput = document.querySelector(".field");
   const passwordInput = document.querySelector(".password_box");
   const usernameInput = document.querySelector(".username_box");
   const textInput = document.querySelector(".text_box");

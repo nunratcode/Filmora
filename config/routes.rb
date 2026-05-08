@@ -40,6 +40,9 @@ Rails.application.routes.draw do
     end
   end
 
+  # Пароль
+  resource :password, only: [ :edit, :update ]
+
   # Админская часть
   namespace :admin do
     root to: "dashboard#index"
@@ -68,6 +71,7 @@ Rails.application.routes.draw do
   # подписка
   get  "/subscription", to: "home#subscription"
   post "/subscription", to: "home#create_subscription"
+  resources :subscriptions, only: [ :create ]
 
   # сброс пароля
   get  "/password_reset",        to: "password_resets#new",    as: :password_reset

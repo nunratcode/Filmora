@@ -16,7 +16,7 @@
 
         <div class="icons">
             <% if user_signed_in? %>
-            <%= link_to signout_path, method: :delete do %>
+            <%= button_to signout_path, method: :delete, class: "logout_button" do %>
                 <%= image_tag("exit.svg", class: "icon") %>
             <% end %>
             <% end %>

@@ -17,7 +17,7 @@
 
         <div class="icons">
             <% if user_signed_in? %>
-            <%= link_to signout_path, method: :delete do %>
+            <%= button_to signout_path, method: :delete, class: "logout_button" do %>
                 <%= image_tag("exit.svg", class: "icon") %>
             <% end %>
             <% end %>
@@ -61,7 +61,12 @@
                 <%= f.email_field :email, class: "email_box", readonly: true %>
 
                 <%= f.submit "Сохранить изменения", class: "savebutton" %>
+
+                <%= link_to "Изменить пароль",
+                    edit_password_path,
+                    class: "change_password_button" %>
             </div>
+
 
         <% end %>
 

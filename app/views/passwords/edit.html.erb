@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag "fonts", media: "all" %>
+<%= stylesheet_link_tag "colors", media: "all" %>
+<%= stylesheet_link_tag "password_edit", media: "all" %>
+<%= javascript_include_tag "email_password_input", defer: true %>
+
+<body>
+    
+    <!-- ХЕДЕР -->
+    <header class="header">
+        <div class="header_logo">FILMORA</div>
+
+        <nav class="nav">
+            <a href="/about">О нас</a>
+            <a href="/feed">Лента</a>
+            <a href="/subscription">Подписка</a>
+        </nav>
+
+        <div class="icons">
+            <% if user_signed_in? %>
+            <%= button_to signout_path, method: :delete, class: "logout_button" do %>
+                <%= image_tag("exit.svg", class: "icon") %>
+            <% end %>
+            <% end %>
+
+            <a href="/favorites"> 
+            <%= image_tag "favorites.svg", class: "icon" %>
+            </a>
+
+            <a href="/signin">
+            <%= image_tag "user.svg", class: "icon" %>
+            </a>
+        </div> 
+    </header>
+
+    <!-- СМЕНА ПАРОЛЯ -->
+    <div class="change">
+
+        <div class="big">ИЗМЕНИТЬ ПАРОЛЬ</div>
+
+        <div class="card-wrapper">
+
+            <%= form_with url: password_path, method: :patch, local: true, html: {class: "card"} do |f| %>
+
+                <% if flash.now[:alert] %>
+                    <input type="text" readonly class="error_box" value="<%= flash.now[:alert] %>">
+                <% end %>
+
+                <%= password_field_tag :current_password,
+                    nil,
+                    placeholder: "Введите текущий пароль",
+                    class: "field" %>
+
+                <%= password_field_tag :new_password,
+                    nil,
+                    placeholder: "Введите новый пароль",
+                    class: "field" %>
+
+                <%= password_field_tag :new_password_confirmation,
+                    nil,
+                    placeholder: "Повторите новый пароль",
+                    class: "field" %>
+
+                <%= f.submit "Сохранить пароль", class: "button" %>
+
+            <% end %>
+
+            <div class="links">
+                <a href="/password_resets/new">Забыли пароль?</a>
+            </div>
+        </div>
+    </div>
+
+</body>
