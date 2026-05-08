@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # Профиль пользователя
   def show
     @user = current_user
+    @posts = @user.posts.includes(:tags)
   end
 
   # Форма регистрации

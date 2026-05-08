@@ -32,33 +32,11 @@ Rails.application.routes.draw do
   end
 
   # Посты
-  resources :posts, only: [ :new, :create, :index, :show ]
-  resources :posts do
+  resources :posts, only: [ :new, :create, :show, :destroy ] do
     collection do
       get :feed
       get :popular
       get :search
-    end
-
-    resources :comments, only: [ :create, :edit, :update, :destroy ], shallow: true
-    resources :likes, only: [ :create ], shallow: true
-    resources :favorites, only: [ :create ], shallow: true
-
-    member do
-      post :toggle_like
-      post :toggle_bookmark
-    end
-  end
-
-  resources :likes, only: [ :destroy ]
-  resources :favorites, only: [ :destroy ]
-
-  resources :subscriptions, only: [ :create, :destroy ]
-
-  resources :messages, only: [ :index, :show, :create, :destroy ] do
-    collection do
-      get :sent
-      get :inbox
     end
   end
 

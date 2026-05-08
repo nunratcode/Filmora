@@ -54,7 +54,7 @@
             <div id="tagsPopup" class="popup hidden">
                 <div class="popup_content">
 
-                    <h3>Выберите теги</h3>
+                    <div class="choose_tags">Выберите теги</div>
 
                     <div class="tags_list">
                         <% @tags.each do |tag| %>
@@ -68,9 +68,6 @@
 
                 </div>
             </div>
-
-            <!-- СКРЫТОЕ ПОЛЕ ДЛЯ ОТПРАВКИ -->
-            <input type="hidden" name="post[tag_ids][]" id="tag_ids">
 
             <%= f.submit "Опубликовать пост" %>
 

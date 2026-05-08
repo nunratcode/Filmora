@@ -2,6 +2,7 @@
     --black: #101010;
     --black_30: #10101030;
     --black_35: #10101035;
+    --black_60: #10101060;
     --grey: #282828;
     --white: #FFFFFF;
     --white_35: #FFFFFF35;
@@ -107,7 +108,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.6);
+    background: var(--black_35);
 }
 
 .hidden {
@@ -118,7 +119,7 @@ body {
     background: var(--white);
     padding: 2rem;
     margin: 5rem auto;
-    width: 300px;
+    width: 30%;
     border-radius: 1rem;
 }
 
@@ -129,6 +130,19 @@ body {
 }
 
 .tag_option.active {
-    background: #fff;
-    color: #000;
+    background: var(--black);
+    color: var(--white);
+}
+
+.choose_tags {
+    font-size: 2rem;
+    font-family: var(--font-widock-trial);
+    color: var(--black);
+    padding-bottom: 1rem;
+}
+
+.tag_option {
+    font-family: var(--font-builder-mono);
+    font-size: 1rem;
+    color: var(--black);
 }
